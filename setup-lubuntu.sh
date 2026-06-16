@@ -67,7 +67,7 @@ fi
 # unclutter hides the mouse cursor; xdotool/x11-xserver-utils for power tweaks.
 echo "==> Installing kiosk helpers (unclutter, x11 tools)..."
 apt-get update -y || true
-apt-get install -y unclutter x11-xserver-utils xdotool || true
+apt-get install -y git unclutter x11-xserver-utils xdotool || true
 
 echo "==> Browser: $BROWSER_BIN"
 
@@ -80,6 +80,26 @@ cat > "$LAUNCH_SCRIPT" <<EOF
 #!/bin/bash
 # Launches the Encoding Machine in Chromium kiosk mode on Lubuntu/X11.
 set -e
+
+# Pull latest commits before launching (best-effort; never blocks the kiosk).
+update_repo() {
+  cd "${REPO_DIR}" || return 0
+  git config --global --add safe.directory "${REPO_DIR}" 2>/dev/null || true
+  # Only pull if we have a network route and a tracking remote.
+  if git rev-parse --abbrev-ref --symbolic-full-name '@{u}' >/dev/null 2>&1; then
+    echo "Checking for updates..."
+    git fetch --quiet 2>/dev/null || { echo "No network; skipping update."; return 0; }
+    LOCAL=\$(git rev-parse @ 2>/dev/null)
+    REMOTE=\$(git rev-parse '@{u}' 2>/dev/null)
+    if [ "\$LOCAL" != "\$REMOTE" ]; then
+      echo "New commits found; updating..."
+      git reset --hard '@{u}' 2>/dev/null || git pull --ff-only 2>/dev/null || true
+    else
+      echo "Already up to date."
+    fi
+  fi
+}
+update_repo || true
 
 # Disable screen blanking, DPMS power saving, and screensaver.
 xset s off || true
@@ -149,6 +169,48 @@ else
   echo "==> LightDM not found; skipping auto-login (configure your display manager manually)."
 fi
 
+# ---------------------------------------------------------------------------
+# 5. Sinhala & Tamil keyboards (IBUS + m17n input methods + fonts)
+# ---------------------------------------------------------------------------
+echo "==> Installing Sinhala & Tamil input methods and fonts..."
+apt-get install -y \
+  ibus ibus-m17n m17n-db \
+  fonts-lklug-sinhala fonts-noto-core fonts-sinhala fonts-tamil \
+  || apt-get install -y ibus ibus-m17n m17n-db fonts-lklug-sinhala || true
+
+# Make IBUS the system input-method framework for all GUI sessions.
+if command -v im-config >/dev/null 2>&1; then
+  im-config -n ibus || true
+fi
+
+# Autostart the IBUS daemon in the kiosk user's session.
+cat > "${AUTOSTART_DIR}/ibus-daemon.desktop" <<EOF
+[Desktop Entry]
+Type=Application
+Name=IBus Daemon
+Exec=ibus-daemon -drx
+Terminal=false
+EOF
+
+# Preload the layouts: US English + Sinhala (wijesekara) + Tamil (tamil99).
+# These are the standard m17n engines: m17n:si:wijesekera, m17n:ta:tamil99.
+sudo -u "$KIOSK_USER" dbus-launch gsettings set org.freedesktop.ibus.general preload-engines \
+  "['xkb:us::eng', 'm17n:si:wijesekera', 'm17n:ta:tamil99']" 2>/dev/null || true
+
+# Export IM environment variables for the kiosk user (covers GTK/Qt/Chrome).
+PROFILE_D="${KIOSK_HOME}/.profile"
+if ! grep -q "GTK_IM_MODULE=ibus" "$PROFILE_D" 2>/dev/null; then
+  cat >> "$PROFILE_D" <<'EOF'
+
+# Sinhala/Tamil input via IBUS
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+EOF
+fi
+chown "$KIOSK_USER":"$KIOSK_USER" "$PROFILE_D" 2>/dev/null || true
+chown -R "$KIOSK_USER":"$KIOSK_USER" "${KIOSK_HOME}/.config"
+
 echo
 echo "============================================================"
 echo " Setup complete."
@@ -156,4 +218,7 @@ echo
 echo "  Reboot to launch the kiosk:   sudo reboot"
 echo "  Test without reboot:          ${LAUNCH_SCRIPT}"
 echo "  Exit kiosk:                   Ctrl+Alt+F2 / Alt+F4"
+echo
+echo "  Switch keyboard layout:       Super+Space  (US / Sinhala / Tamil)"
+echo "  Sinhala engine: wijesekera    Tamil engine: tamil99"
 echo "============================================================"
