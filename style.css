@@ -1,0 +1,241 @@
+        :root {
+            --bg:       #0a0a0a;
+            --panel:    #111;
+            --border:   #1e1e1e;
+            --accent:   #ffffff;
+            --dim:      #959595;
+            --text:     #d0d0d0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        #progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            width: 0%;
+            height: 5px;
+            background: #00ff41;
+            z-index: 9999;
+            transition: none;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', 'Courier New', monospace;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            cursor: none;
+        }
+        * { cursor: none !important; }
+
+        /* ═══ AREA 1 — input bar ═══ */
+        #area-input {
+            flex-shrink: 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 14px 40px;
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+        }
+        .input-col { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+        .input-label {
+            font-size: 1rem; color: var(--accent);
+            text-transform: uppercase;
+        }
+        #textInput {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            font-size: 1.9rem;
+            padding: 6px 14px;
+            outline: none;
+            width: min(1000px, 60vw);
+            font-family: "Abhaya Libre", "Courier New", monospace;
+        }
+        #unicode-seq {
+            font-size: 0.0rem;
+            font-weight: bold;
+            color: var(--accent);
+            letter-spacing: 3px;
+            min-height: 1.1em;
+            border-top: 1px solid var(--border);
+            padding-top: 5px;
+        }
+        .intro-col { flex: 1; text-align: right; }
+        .intro-title {
+            display: block;
+            font-size: 1rem; font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .intro-line {
+            display: block;
+            font-size: 0.63rem; color: var(--dim);
+            letter-spacing: 1px; line-height: 1.9;
+        }
+
+        /* ═══ AREA 2 — unicode codepoints ═══ */
+        #area-unicode {
+            flex-shrink: 0;
+            padding: 5px 40px 6px;
+            background: #0d0d0d;
+            border-bottom: 1px solid var(--border);
+        }
+        .area-label {
+            font-size: 0.45rem; color: var(--dim);
+            letter-spacing: 4px; text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        #codepoints-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: clamp(3px, 0.4vw, 6px);
+            overflow: hidden;
+        }
+        .cp-card {
+            flex: 1 1 0;
+            min-width: 0;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--dim);
+            padding: 4px 6px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            overflow: hidden;
+        }
+        .cp-char {
+            font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 2.2rem);
+            line-height: 1;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .cp-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            min-width: 0;
+            overflow: hidden;
+            flex: 1;
+        }
+        .cp-hex  { font-size: clamp(0.9rem, 2.vw, 0.8rem); color: var(--accent); letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cp-name { font-size: clamp(0.32rem, 0.45vw, 0.55rem); color: var(--dim); letter-spacing: 0.5px; line-height: 1.2; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .cp-bin  { font-size: clamp(0.32rem, 0.42vw, 0.52rem); color: #666; letter-spacing: 0.3px; word-break: break-all; }
+
+        /* ═══ CONNECTOR ═══ */
+        #connector {
+            flex-shrink: 0;
+            position: relative;
+            height: 80px;
+        }
+        #connector-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            overflow: visible;
+        }
+        #connector-label {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.42rem;
+            color: var(--dim);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: var(--bg);
+            padding: 2px 12px;
+            white-space: nowrap;
+        }
+
+        /* ═══ AREA 3 — glyph rendering ═══ */
+        #area-glyph {
+            flex: 1;
+            min-height: 0;
+            background: #080808;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 40px 14px;
+            overflow: hidden;
+        }
+        #glyphs-row {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            overflow: hidden;
+            align-items: stretch;
+        }
+        .glyph-card {
+            flex-shrink: 0;
+            min-width: var(--glyph-w, 200px);
+            width: fit-content;
+            max-height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            /* animation: fadeUp 0.25s ease; */
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .glyph-canvas-wrap {
+            flex-shrink: 0;
+            height: var(--glyph-w, 200px);
+            width: fit-content;
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--dim);
+            background: #fff;
+            overflow: hidden;
+        }
+        .glyph-canvas-wrap canvas { display: block; height: 100%; width: auto; }
+        .glyph-name { font-size: 0.75rem; color: var(--accent); font-weight: bold; letter-spacing: 1px; word-break: break-all; }
+        .glyph-sub  { font-size: 0.65rem; color: var(--dim); line-height: 1.4; }
+        .bezier-data {
+            font-family: "Courier New", monospace;
+            font-size: clamp(.5rem, 0.5vw, 0.52rem);
+            color: #00ffa1;
+            background: #050505;
+            padding: 5px 7px;
+            line-height: 1;
+            word-break: break-all;
+            flex-shrink: 1;
+            min-height: 0;
+            max-height: 10rem;
+            overflow: hidden;
+            letter-spacing: 0;
+        }
+
+        @font-face {
+            font-family: "Abhaya Libre";
+            src: url("AbhayaLibreNIGHTLYVF.ttf") format("truetype");
+            font-weight: 100 900;
+        }
+
+        /* ═══ DEMO HUD ═══ */
+        #demo-hud {
+            position: fixed;
+            bottom: 14px;
+            right: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            pointer-events: none;
+            opacity: 0.55;
+        }
+        #demo-hud:hover { opacity: 1; }
+        #demo-status { font-size: 0.75rem; color: var(--accent); }
+        #demo-keys   { font-size: 0.42rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; }
+    

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akurugraphy — How Machines See Language</title>
+    <script src="./opentype.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- ═══ AREA 1 ═══ -->
+<section id="area-input">
+    <div class="input-col">
+        <span class="input-label">TYPE YOUR NAME / ඔබේ නම ටයිප් කරන්න / உங்கள் பெயரை தட்டச்சு செய்யுங்கள் 
+
+            
+        </span>
+        <input type="text" id="textInput" placeholder="Type here! / හෙලෝ / ஹலோ" maxlength="30" autofocus>
+        <div id="unicode-seq"></div>
+    </div>
+    <div class="intro-col">
+        <span class="intro-title">How machines see language <br> පරිගණකය බස දකින හැටි <br> கணினிக்கு எழுத்துக்கள் புலப்படும் விதம்
+
+    </div>
+</section>
+
+<!-- ═══ AREA 2 ═══ -->
+<section id="area-unicode">
+    <div id="codepoints-row"></div>
+</section>
+
+<!-- ═══ CONNECTOR ═══ -->
+<div id="connector">
+    <svg id="connector-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+
+<!-- ═══ AREA 3 ═══ -->
+<section id="area-glyph">
+    <div id="glyphs-row"></div>
+</section>
+
+<div id="detail"></div>
+
+<script src="font-data.js" defer></script>
+<script src="words.js" defer></script>
+<script src="main.js" defer></script>
+
+<div id="demo-hud">
+    <span id="demo-status">▶</span>
+    <span id="demo-keys">← prev &nbsp; → next &nbsp; ↓ pause &nbsp; ↑ play</span>
+</div>
+</body>
+</html>

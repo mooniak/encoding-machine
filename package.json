@@ -1,0 +1,28 @@
+{
+  "name": "@mooniak/encoding-machine",
+  "version": "1.0.0",
+  "description": "Interactive exhibition kiosk — shows how machines encode Sinhala, Tamil, and Latin scripts at the glyph level.",
+  "author": "Mooniak <hello@mooniak.com>",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/mooniak/akurugraphy-exhhibition",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mooniak/akurugraphy-exhhibition.git"
+  },
+  "scripts": {
+    "start": "open launch-kiosk.command",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version"
+  },
+  "files": [
+    "index.html",
+    "style.css",
+    "main.js",
+    "words.js",
+    "font-data.js",
+    "AbhayaLibreNIGHTLYVF.ttf",
+    "launch-kiosk.command"
+  ]
+}

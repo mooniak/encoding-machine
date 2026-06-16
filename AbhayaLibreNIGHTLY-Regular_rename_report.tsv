@@ -1,0 +1,1213 @@
+# LankaGlyphset rename report
+# generated: 2026-06-10T20:09:37
+# font: /Users/pathumego/src/github/mooniak/akurugraphy-exhhibition/encoding-machine/AbhayaLibreNIGHTLY-Regular.ttf
+# DRY_RUN: False
+# total glyphs: 1203
+# status counts: {'skip': 570, 'unchanged': 58, 'renamed': 575}
+# renamed but NOT in canonical YAML set (flagged): 386
+# ambiguous (left untouched): 0
+#
+old_name	new_name	status	in_standard	note
+.notdef	.notdef	skip	False	not a Sinhala (-sinh) glyph
+NULL	NULL	skip	False	not a Sinhala (-sinh) glyph
+CR	CR	skip	False	not a Sinhala (-sinh) glyph
+space	space	skip	False	not a Sinhala (-sinh) glyph
+a-sinh	a-sinh	unchanged	True	base vowel
+aa-sinh	aa-sinh	unchanged	True	base vowel
+ae-sinh	ae-sinh	unchanged	True	base vowel
+aae-sinh	aae-sinh	unchanged	True	base vowel
+i-sinh	i-sinh	unchanged	True	base vowel
+ii-sinh	ii-sinh	unchanged	True	base vowel
+u-sinh	u-sinh	unchanged	True	base vowel
+uu-sinh	uu-sinh	unchanged	True	base vowel
+vocalicR-sinh	vocalicr-sinh	renamed	True	independent vowel case fix
+vocalicRr-sinh	vocalicrr-sinh	renamed	True	independent vowel case fix
+vocalicL-sinh	vocalicl-sinh	renamed	True	independent vowel case fix
+vocalicLl-sinh	vocalicll-sinh	renamed	True	independent vowel case fix
+e-sinh	e-sinh	unchanged	True	base vowel
+ee-sinh	ee-sinh	unchanged	True	base vowel
+ai-sinh	ai-sinh	unchanged	True	base vowel
+o-sinh	o-sinh	unchanged	True	base vowel
+oo-sinh	oo-sinh	unchanged	True	base vowel
+au-sinh	au-sinh	unchanged	True	base vowel
+ka-sinh	ka-sinh	unchanged	True	base consonant
+kha-sinh	kha-sinh	unchanged	True	base consonant
+ga-sinh	ga-sinh	unchanged	True	base consonant
+gha-sinh	gha-sinh	unchanged	True	base consonant
+nga-sinh	nga-sinh	unchanged	True	base consonant
+ngga-sinh	nnga-sinh	renamed	True	base consonant
+ca-sinh	ca-sinh	unchanged	True	base consonant
+cha-sinh	cha-sinh	unchanged	True	base consonant
+ja-sinh	ja-sinh	unchanged	True	base consonant
+jha-sinh	jha-sinh	unchanged	True	base consonant
+nya-sinh	nya-sinh	unchanged	True	base consonant
+jnya-sinh	jnya-sinh	unchanged	True	base consonant
+nyja-sinh	nyja-sinh	unchanged	False	base consonant
+tta-sinh	tta-sinh	unchanged	True	base consonant
+ttha-sinh	ttha-sinh	unchanged	True	base consonant
+dda-sinh	dda-sinh	unchanged	True	base consonant
+ddha-sinh	ddha-sinh	unchanged	True	base consonant
+nna-sinh	nna-sinh	unchanged	True	base consonant
+nndda-sinh	nndda-sinh	unchanged	True	base consonant
+ta-sinh	ta-sinh	unchanged	True	base consonant
+tha-sinh	tha-sinh	unchanged	True	base consonant
+da-sinh	da-sinh	unchanged	True	base consonant
+dha-sinh	dha-sinh	unchanged	True	base consonant
+na-sinh	na-sinh	unchanged	True	base consonant
+nda-sinh	nda-sinh	unchanged	True	base consonant
+pa-sinh	pa-sinh	unchanged	True	base consonant
+pha-sinh	pha-sinh	unchanged	True	base consonant
+ba-sinh	ba-sinh	unchanged	True	base consonant
+bha-sinh	bha-sinh	unchanged	True	base consonant
+ma-sinh	ma-sinh	unchanged	True	base consonant
+mba-sinh	mba-sinh	unchanged	True	base consonant
+ya-sinh	ya-sinh	unchanged	True	base consonant
+ra-sinh	ra-sinh	unchanged	True	base consonant
+la-sinh	la-sinh	unchanged	True	base consonant
+va-sinh	va-sinh	unchanged	True	base consonant
+sha-sinh	sha-sinh	unchanged	True	base consonant
+ssa-sinh	ssa-sinh	unchanged	True	base consonant
+sa-sinh	sa-sinh	unchanged	True	base consonant
+ha-sinh	ha-sinh	unchanged	True	base consonant
+lla-sinh	lla-sinh	unchanged	True	base consonant
+fa-sinh	fa-sinh	unchanged	True	base consonant
+ka_ssa-sinh	kSsa-sinh	renamed	True	cluster base
+ka_va-sinh	kVa-sinh	renamed	True	cluster base
+ta_va-sinh	tVa-sinh	renamed	True	cluster base
+ta_tha-sinh	tTha-sinh	renamed	True	cluster base
+na_da-sinh	nDa-sinh	renamed	True	cluster base
+na_dha-sinh	nDha-sinh	renamed	True	cluster base
+na_va-sinh	nVa-sinh	renamed	True	cluster base
+na_tha-sinh	nTha-sinh	renamed	True	cluster base
+ga_dha-sinh	gDha-sinh	renamed	False	cluster base
+da_va-sinh	dVa-sinh	renamed	True	cluster base
+da_dha-sinh	dDha-sinh	renamed	False	cluster base
+tta_ttha-sinh	ttTtha-sinh	renamed	True	cluster base
+nya_ca-sinh	nyCa-sinh	renamed	True	cluster base
+nya_cha-sinh	nyCha-sinh	renamed	True	cluster base
+ca_ca-sinh	cCa-sinh	renamed	False	cluster base
+ba_ba-sinh	bBa-sinh	renamed	False	cluster base
+aae-sign-sinh	aaesign-sinh	renamed	True	standalone sign
+ae-sign-sinh	aesign-sinh	renamed	True	standalone sign
+ai-sign-sinh	aisign-sinh	renamed	True	standalone sign
+au-sign-sinh	ausign-sinh	renamed	True	standalone sign
+e-sign-sinh	esign-sinh	renamed	True	standalone sign
+ee-sign-sinh	eesign-sinh	renamed	True	standalone sign
+i-sign-sinh	isign-sinh	renamed	True	standalone sign
+ii-sign-sinh	iisign-sinh	renamed	True	standalone sign
+vocalicLl-sign-sinh	vocalicllsign-sinh	renamed	True	standalone sign
+vocalicL-sign-sinh	vocaliclsign-sinh	renamed	True	standalone sign
+o-sign-sinh	osign-sinh	renamed	True	standalone sign
+oo-sign-sinh	oosign-sinh	renamed	True	standalone sign
+vocalicR-sign-sinh	vocalicrsign-sinh	renamed	True	standalone sign
+vocalicRr-sign-sinh	vocalicrrsign-sinh	renamed	True	standalone sign
+u-sign-sinh	usign-sinh	renamed	True	standalone sign
+uu-sign-sinh	uusign-sinh	renamed	True	standalone sign
+u-sign.sub-sinh	usign.rasign-sinh	renamed	True	special contextual sign
+uu-sign.sub-sinh	uusign.rasign-sinh	renamed	True	special contextual sign
+al-sign-sinh	virama-sinh	renamed	True	standalone sign
+rakar-sign-sinh	rasign-sinh	renamed	True	standalone sign
+repha-sign-sinh	repha-sinh	renamed	True	standalone sign
+anusvara-sinh	anusvaraya-sinh	renamed	True	standalone sign
+candrabindu-sinh	candrabindu-sinh	unchanged	True	standalone sign
+visarga-sinh	visargaya-sinh	renamed	True	standalone sign
+aa-sign-sinh	aasign-sinh	renamed	True	standalone sign
+aa-sign.al-sinh	aasign_virama-sinh	renamed	False	special contextual sign
+touch-sinh	touch-sinh	unchanged	False	standalone sign
+ka-al-sinh	k-sinh	renamed	False	pure-consonant (virama) ligature
+kha-al-sinh	kh-sinh	renamed	True	pure-consonant (virama) ligature
+ga-al-sinh	g-sinh	renamed	False	pure-consonant (virama) ligature
+gha-al-sinh	gh-sinh	renamed	False	pure-consonant (virama) ligature
+nga-al-sinh	ng-sinh	renamed	True	pure-consonant (virama) ligature
+ngga-al-sinh	nng-sinh	renamed	False	pure-consonant (virama) ligature
+ca-al-sinh	c-sinh	renamed	True	pure-consonant (virama) ligature
+cha-al-sinh	ch-sinh	renamed	True	pure-consonant (virama) ligature
+ja-al-sinh	j-sinh	renamed	True	pure-consonant (virama) ligature
+jha-al-sinh	jh-sinh	renamed	True	pure-consonant (virama) ligature
+nya-al-sinh	ny-sinh	renamed	False	pure-consonant (virama) ligature
+jnya-al-sinh	jny-sinh	renamed	True	pure-consonant (virama) ligature
+nyja-al-sinh	nyj-sinh	renamed	True	pure-consonant (virama) ligature
+tta-al-sinh	tt-sinh	renamed	True	pure-consonant (virama) ligature
+ttha-al-sinh	tth-sinh	renamed	True	pure-consonant (virama) ligature
+dda-al-sinh	dd-sinh	renamed	True	pure-consonant (virama) ligature
+ddha-al-sinh	ddh-sinh	renamed	True	pure-consonant (virama) ligature
+nna-al-sinh	nn-sinh	renamed	False	pure-consonant (virama) ligature
+nndda-al-sinh	nndd-sinh	renamed	True	pure-consonant (virama) ligature
+ta-al-sinh	t-sinh	renamed	False	pure-consonant (virama) ligature
+tha-al-sinh	th-sinh	renamed	True	pure-consonant (virama) ligature
+da-al-sinh	d-sinh	renamed	False	pure-consonant (virama) ligature
+dha-al-sinh	dh-sinh	renamed	True	pure-consonant (virama) ligature
+na-al-sinh	n-sinh	renamed	False	pure-consonant (virama) ligature
+nda-al-sinh	nd-sinh	renamed	False	pure-consonant (virama) ligature
+pa-al-sinh	p-sinh	renamed	False	pure-consonant (virama) ligature
+pha-al-sinh	ph-sinh	renamed	True	pure-consonant (virama) ligature
+ba-al-sinh	b-sinh	renamed	True	pure-consonant (virama) ligature
+bha-al-sinh	bh-sinh	renamed	False	pure-consonant (virama) ligature
+ma-al-sinh	m-sinh	renamed	True	pure-consonant (virama) ligature
+mba-al-sinh	mb-sinh	renamed	True	pure-consonant (virama) ligature
+ya-al-sinh	y-sinh	renamed	False	pure-consonant (virama) ligature
+ra-al-sinh	r-sinh	renamed	True	pure-consonant (virama) ligature
+la-al-sinh	l-sinh	renamed	False	pure-consonant (virama) ligature
+va-al-sinh	v-sinh	renamed	True	pure-consonant (virama) ligature
+sha-al-sinh	sh-sinh	renamed	False	pure-consonant (virama) ligature
+ssa-al-sinh	ss-sinh	renamed	False	pure-consonant (virama) ligature
+sa-al-sinh	s-sinh	renamed	False	pure-consonant (virama) ligature
+ha-al-sinh	h-sinh	renamed	False	pure-consonant (virama) ligature
+lla-al-sinh	ll-sinh	renamed	False	pure-consonant (virama) ligature
+fa-al-sinh	f-sinh	renamed	False	pure-consonant (virama) ligature
+ka_ssa-al-sinh	kSs-sinh	renamed	False	pure-consonant (virama) ligature
+ka_va-al-sinh	kV-sinh	renamed	True	pure-consonant (virama) ligature
+ta_va-al-sinh	tV-sinh	renamed	False	pure-consonant (virama) ligature
+ta_tha-al-sinh	tTh-sinh	renamed	False	pure-consonant (virama) ligature
+na_da-al-sinh	nD-sinh	renamed	False	pure-consonant (virama) ligature
+na_dha-al-sinh	nDh-sinh	renamed	False	pure-consonant (virama) ligature
+na_va-al-sinh	nV-sinh	renamed	False	pure-consonant (virama) ligature
+na_tha-al-sinh	nTh-sinh	renamed	False	pure-consonant (virama) ligature
+ga_dha-al-sinh	gDh-sinh	renamed	False	pure-consonant (virama) ligature
+da_va-al-sinh	dV-sinh	renamed	False	pure-consonant (virama) ligature
+da_dha-al-sinh	dDh-sinh	renamed	False	pure-consonant (virama) ligature
+tta_ttha-al-sinh	ttTth-sinh	renamed	False	pure-consonant (virama) ligature
+nya_ca-al-sinh	nyC-sinh	renamed	False	pure-consonant (virama) ligature
+nya_cha-al-sinh	nyCh-sinh	renamed	False	pure-consonant (virama) ligature
+ca_ca-al-sinh	cC-sinh	renamed	False	pure-consonant (virama) ligature
+ba_ba-al-sinh	bB-sinh	renamed	False	pure-consonant (virama) ligature
+ka-i-sinh	kI-sinh	renamed	False	consonant+vowel-sign ligature
+kha-i-sinh	khI-sinh	renamed	True	consonant+vowel-sign ligature
+ga-i-sinh	gI-sinh	renamed	False	consonant+vowel-sign ligature
+gha-i-sinh	ghI-sinh	renamed	False	consonant+vowel-sign ligature
+nga-i-sinh	ngI-sinh	renamed	True	consonant+vowel-sign ligature
+ngga-i-sinh	nngI-sinh	renamed	False	consonant+vowel-sign ligature
+ca-i-sinh	cI-sinh	renamed	True	consonant+vowel-sign ligature
+cha-i-sinh	chI-sinh	renamed	True	consonant+vowel-sign ligature
+ja-i-sinh	jI-sinh	renamed	True	consonant+vowel-sign ligature
+jha-i-sinh	jhI-sinh	renamed	True	consonant+vowel-sign ligature
+nya-i-sinh	nyI-sinh	renamed	False	consonant+vowel-sign ligature
+jnya-i-sinh	jnyI-sinh	renamed	True	consonant+vowel-sign ligature
+nyja-i-sinh	nyjI-sinh	renamed	True	consonant+vowel-sign ligature
+tta-i-sinh	ttI-sinh	renamed	True	consonant+vowel-sign ligature
+ttha-i-sinh	tthI-sinh	renamed	True	consonant+vowel-sign ligature
+dda-i-sinh	ddI-sinh	renamed	True	consonant+vowel-sign ligature
+ddha-i-sinh	ddhI-sinh	renamed	True	consonant+vowel-sign ligature
+nna-i-sinh	nnI-sinh	renamed	False	consonant+vowel-sign ligature
+nndda-i-sinh	nnddI-sinh	renamed	True	consonant+vowel-sign ligature
+ta-i-sinh	tI-sinh	renamed	False	consonant+vowel-sign ligature
+tha-i-sinh	thI-sinh	renamed	True	consonant+vowel-sign ligature
+da-i-sinh	dI-sinh	renamed	False	consonant+vowel-sign ligature
+dha-i-sinh	dhI-sinh	renamed	True	consonant+vowel-sign ligature
+na-i-sinh	nI-sinh	renamed	False	consonant+vowel-sign ligature
+nda-i-sinh	ndI-sinh	renamed	False	consonant+vowel-sign ligature
+pa-i-sinh	pI-sinh	renamed	False	consonant+vowel-sign ligature
+pha-i-sinh	phI-sinh	renamed	True	consonant+vowel-sign ligature
+ba-i-sinh	bI-sinh	renamed	True	consonant+vowel-sign ligature
+bha-i-sinh	bhI-sinh	renamed	False	consonant+vowel-sign ligature
+ma-i-sinh	mI-sinh	renamed	True	consonant+vowel-sign ligature
+mba-i-sinh	mbI-sinh	renamed	True	consonant+vowel-sign ligature
+ya-i-sinh	yI-sinh	renamed	False	consonant+vowel-sign ligature
+ra-i-sinh	rI-sinh	renamed	True	consonant+vowel-sign ligature
+la-i-sinh	lI-sinh	renamed	False	consonant+vowel-sign ligature
+va-i-sinh	vI-sinh	renamed	True	consonant+vowel-sign ligature
+sha-i-sinh	shI-sinh	renamed	False	consonant+vowel-sign ligature
+ssa-i-sinh	ssI-sinh	renamed	False	consonant+vowel-sign ligature
+sa-i-sinh	sI-sinh	renamed	False	consonant+vowel-sign ligature
+ha-i-sinh	hI-sinh	renamed	False	consonant+vowel-sign ligature
+lla-i-sinh	llI-sinh	renamed	False	consonant+vowel-sign ligature
+fa-i-sinh	fI-sinh	renamed	False	consonant+vowel-sign ligature
+ka_ssa-i-sinh	kSsI-sinh	renamed	False	consonant+vowel-sign ligature
+ka_va-i-sinh	kVI-sinh	renamed	True	consonant+vowel-sign ligature
+ta_va-i-sinh	tVI-sinh	renamed	True	consonant+vowel-sign ligature
+ta_tha-i-sinh	tThI-sinh	renamed	True	consonant+vowel-sign ligature
+na_da-i-sinh	nDI-sinh	renamed	True	consonant+vowel-sign ligature
+na_dha-i-sinh	nDhI-sinh	renamed	True	consonant+vowel-sign ligature
+na_va-i-sinh	nVI-sinh	renamed	False	consonant+vowel-sign ligature
+na_tha-i-sinh	nThI-sinh	renamed	True	consonant+vowel-sign ligature
+ga_dha-i-sinh	gDhI-sinh	renamed	False	consonant+vowel-sign ligature
+da_va-i-sinh	dVI-sinh	renamed	False	consonant+vowel-sign ligature
+da_dha-i-sinh	dDhI-sinh	renamed	False	consonant+vowel-sign ligature
+tta_ttha-i-sinh	ttTthI-sinh	renamed	False	consonant+vowel-sign ligature
+nya_ca-i-sinh	nyCI-sinh	renamed	False	consonant+vowel-sign ligature
+nya_cha-i-sinh	nyChI-sinh	renamed	False	consonant+vowel-sign ligature
+ca_ca-i-sinh	cCI-sinh	renamed	False	consonant+vowel-sign ligature
+ba_ba-i-sinh	bBI-sinh	renamed	False	consonant+vowel-sign ligature
+ka-ii-sinh	kIi-sinh	renamed	False	consonant+vowel-sign ligature
+kha-ii-sinh	khIi-sinh	renamed	True	consonant+vowel-sign ligature
+ga-ii-sinh	gIi-sinh	renamed	False	consonant+vowel-sign ligature
+gha-ii-sinh	ghIi-sinh	renamed	False	consonant+vowel-sign ligature
+nga-ii-sinh	ngIi-sinh	renamed	True	consonant+vowel-sign ligature
+ngga-ii-sinh	nngIi-sinh	renamed	False	consonant+vowel-sign ligature
+ca-ii-sinh	cIi-sinh	renamed	True	consonant+vowel-sign ligature
+cha-ii-sinh	chIi-sinh	renamed	True	consonant+vowel-sign ligature
+ja-ii-sinh	jIi-sinh	renamed	True	consonant+vowel-sign ligature
+jha-ii-sinh	jhIi-sinh	renamed	True	consonant+vowel-sign ligature
+nya-ii-sinh	nyIi-sinh	renamed	False	consonant+vowel-sign ligature
+jnya-ii-sinh	jnyIi-sinh	renamed	True	consonant+vowel-sign ligature
+nyja-ii-sinh	nyjIi-sinh	renamed	True	consonant+vowel-sign ligature
+tta-ii-sinh	ttIi-sinh	renamed	True	consonant+vowel-sign ligature
+ttha-ii-sinh	tthIi-sinh	renamed	True	consonant+vowel-sign ligature
+dda-ii-sinh	ddIi-sinh	renamed	True	consonant+vowel-sign ligature
+ddha-ii-sinh	ddhIi-sinh	renamed	True	consonant+vowel-sign ligature
+nna-ii-sinh	nnIi-sinh	renamed	False	consonant+vowel-sign ligature
+nndda-ii-sinh	nnddIi-sinh	renamed	True	consonant+vowel-sign ligature
+ta-ii-sinh	tIi-sinh	renamed	False	consonant+vowel-sign ligature
+tha-ii-sinh	thIi-sinh	renamed	True	consonant+vowel-sign ligature
+da-ii-sinh	dIi-sinh	renamed	False	consonant+vowel-sign ligature
+dha-ii-sinh	dhIi-sinh	renamed	True	consonant+vowel-sign ligature
+na-ii-sinh	nIi-sinh	renamed	False	consonant+vowel-sign ligature
+nda-ii-sinh	ndIi-sinh	renamed	False	consonant+vowel-sign ligature
+pa-ii-sinh	pIi-sinh	renamed	False	consonant+vowel-sign ligature
+pha-ii-sinh	phIi-sinh	renamed	True	consonant+vowel-sign ligature
+ba-ii-sinh	bIi-sinh	renamed	True	consonant+vowel-sign ligature
+bha-ii-sinh	bhIi-sinh	renamed	False	consonant+vowel-sign ligature
+ma-ii-sinh	mIi-sinh	renamed	True	consonant+vowel-sign ligature
+mba-ii-sinh	mbIi-sinh	renamed	True	consonant+vowel-sign ligature
+ya-ii-sinh	yIi-sinh	renamed	False	consonant+vowel-sign ligature
+ra-ii-sinh	rIi-sinh	renamed	True	consonant+vowel-sign ligature
+la-ii-sinh	lIi-sinh	renamed	False	consonant+vowel-sign ligature
+va-ii-sinh	vIi-sinh	renamed	True	consonant+vowel-sign ligature
+sha-ii-sinh	shIi-sinh	renamed	False	consonant+vowel-sign ligature
+ssa-ii-sinh	ssIi-sinh	renamed	False	consonant+vowel-sign ligature
+sa-ii-sinh	sIi-sinh	renamed	False	consonant+vowel-sign ligature
+ha-ii-sinh	hIi-sinh	renamed	False	consonant+vowel-sign ligature
+lla-ii-sinh	llIi-sinh	renamed	False	consonant+vowel-sign ligature
+fa-ii-sinh	fIi-sinh	renamed	False	consonant+vowel-sign ligature
+ka_ssa-ii-sinh	kSsIi-sinh	renamed	False	consonant+vowel-sign ligature
+ka_va-ii-sinh	kVIi-sinh	renamed	True	consonant+vowel-sign ligature
+ta_va-ii-sinh	tVIi-sinh	renamed	True	consonant+vowel-sign ligature
+ta_tha-ii-sinh	tThIi-sinh	renamed	True	consonant+vowel-sign ligature
+na_da-ii-sinh	nDIi-sinh	renamed	True	consonant+vowel-sign ligature
+na_dha-ii-sinh	nDhIi-sinh	renamed	True	consonant+vowel-sign ligature
+na_va-ii-sinh	nVIi-sinh	renamed	False	consonant+vowel-sign ligature
+na_tha-ii-sinh	nThIi-sinh	renamed	True	consonant+vowel-sign ligature
+ga_dha-ii-sinh	gDhIi-sinh	renamed	False	consonant+vowel-sign ligature
+da_va-ii-sinh	dVIi-sinh	renamed	False	consonant+vowel-sign ligature
+da_dha-ii-sinh	dDhIi-sinh	renamed	False	consonant+vowel-sign ligature
+tta_ttha-ii-sinh	ttTthIi-sinh	renamed	False	consonant+vowel-sign ligature
+nya_ca-ii-sinh	nyCIi-sinh	renamed	False	consonant+vowel-sign ligature
+nya_cha-ii-sinh	nyChIi-sinh	renamed	False	consonant+vowel-sign ligature
+ca_ca-ii-sinh	cCIi-sinh	renamed	False	consonant+vowel-sign ligature
+ba_ba-ii-sinh	bBIi-sinh	renamed	False	consonant+vowel-sign ligature
+ka-u-sinh	kU-sinh	renamed	True	consonant+vowel-sign ligature
+kha-u-sinh	khU-sinh	renamed	False	consonant+vowel-sign ligature
+ga-u-sinh	gU-sinh	renamed	True	consonant+vowel-sign ligature
+gha-u-sinh	ghU-sinh	renamed	False	consonant+vowel-sign ligature
+ngga-u-sinh	nngU-sinh	renamed	False	consonant+vowel-sign ligature
+ca-u-sinh	cU-sinh	renamed	False	consonant+vowel-sign ligature
+cha-u-sinh	chU-sinh	renamed	False	consonant+vowel-sign ligature
+ja-u-sinh	jU-sinh	renamed	False	consonant+vowel-sign ligature
+jha-u-sinh	jhU-sinh	renamed	False	consonant+vowel-sign ligature
+nya-u-sinh	nyU-sinh	renamed	True	consonant+vowel-sign ligature
+jnya-u-sinh	jnyU-sinh	renamed	True	consonant+vowel-sign ligature
+nyja-u-sinh	nyjU-sinh	renamed	True	consonant+vowel-sign ligature
+tta-u-sinh	ttU-sinh	renamed	False	consonant+vowel-sign ligature
+ttha-u-sinh	tthU-sinh	renamed	False	consonant+vowel-sign ligature
+dda-u-sinh	ddU-sinh	renamed	False	consonant+vowel-sign ligature
+ddha-u-sinh	ddhU-sinh	renamed	False	consonant+vowel-sign ligature
+nna-u-sinh	nnU-sinh	renamed	False	consonant+vowel-sign ligature
+nndda-u-sinh	nnddU-sinh	renamed	False	consonant+vowel-sign ligature
+ta-u-sinh	tU-sinh	renamed	True	consonant+vowel-sign ligature
+tha-u-sinh	thU-sinh	renamed	False	consonant+vowel-sign ligature
+da-u-sinh	dU-sinh	renamed	True	consonant+vowel-sign ligature
+dha-u-sinh	dhU-sinh	renamed	False	consonant+vowel-sign ligature
+na-u-sinh	nU-sinh	renamed	False	consonant+vowel-sign ligature
+nda-u-sinh	ndU-sinh	renamed	True	consonant+vowel-sign ligature
+pa-u-sinh	pU-sinh	renamed	False	consonant+vowel-sign ligature
+pha-u-sinh	phU-sinh	renamed	False	consonant+vowel-sign ligature
+ba-u-sinh	bU-sinh	renamed	False	consonant+vowel-sign ligature
+bha-u-sinh	bhU-sinh	renamed	True	consonant+vowel-sign ligature
+ma-u-sinh	mU-sinh	renamed	False	consonant+vowel-sign ligature
+mba-u-sinh	mbU-sinh	renamed	False	consonant+vowel-sign ligature
+ya-u-sinh	yU-sinh	renamed	False	consonant+vowel-sign ligature
+ra-u-sinh	rU-sinh	renamed	True	consonant+vowel-sign ligature
+la-u-sinh	lU-sinh	renamed	True	consonant+vowel-sign ligature
+va-u-sinh	vU-sinh	renamed	False	consonant+vowel-sign ligature
+sha-u-sinh	shU-sinh	renamed	True	consonant+vowel-sign ligature
+ssa-u-sinh	ssU-sinh	renamed	False	consonant+vowel-sign ligature
+sa-u-sinh	sU-sinh	renamed	False	consonant+vowel-sign ligature
+ha-u-sinh	hU-sinh	renamed	False	consonant+vowel-sign ligature
+lla-u-sinh	llU-sinh	renamed	True	consonant+vowel-sign ligature
+fa-u-sinh	fU-sinh	renamed	False	consonant+vowel-sign ligature
+ka_ssa-u-sinh	kSsU-sinh	renamed	False	consonant+vowel-sign ligature
+ka_va-u-sinh	kVU-sinh	renamed	False	consonant+vowel-sign ligature
+ta_va-u-sinh	tVU-sinh	renamed	False	consonant+vowel-sign ligature
+ta_tha-u-sinh	tThU-sinh	renamed	False	consonant+vowel-sign ligature
+na_da-u-sinh	nDU-sinh	renamed	False	consonant+vowel-sign ligature
+na_dha-u-sinh	nDhU-sinh	renamed	False	consonant+vowel-sign ligature
+na_va-u-sinh	nVU-sinh	renamed	False	consonant+vowel-sign ligature
+na_tha-u-sinh	nThU-sinh	renamed	False	consonant+vowel-sign ligature
+ga_dha-u-sinh	gDhU-sinh	renamed	False	consonant+vowel-sign ligature
+da_va-u-sinh	dVU-sinh	renamed	False	consonant+vowel-sign ligature
+da_dha-u-sinh	dDhU-sinh	renamed	False	consonant+vowel-sign ligature
+tta_ttha-u-sinh	ttTthU-sinh	renamed	False	consonant+vowel-sign ligature
+nya_ca-u-sinh	nyCU-sinh	renamed	False	consonant+vowel-sign ligature
+nya_cha-u-sinh	nyChU-sinh	renamed	False	consonant+vowel-sign ligature
+ca_ca-u-sinh	cCU-sinh	renamed	False	consonant+vowel-sign ligature
+ba_ba-u-sinh	bBU-sinh	renamed	False	consonant+vowel-sign ligature
+ka-uu-sinh	kUu-sinh	renamed	True	consonant+vowel-sign ligature
+kha-uu-sinh	khUu-sinh	renamed	False	consonant+vowel-sign ligature
+ga-uu-sinh	gUu-sinh	renamed	True	consonant+vowel-sign ligature
+gha-uu-sinh	ghUu-sinh	renamed	False	consonant+vowel-sign ligature
+ngga-uu-sinh	nngUu-sinh	renamed	False	consonant+vowel-sign ligature
+ca-uu-sinh	cUu-sinh	renamed	False	consonant+vowel-sign ligature
+cha-uu-sinh	chUu-sinh	renamed	False	consonant+vowel-sign ligature
+ja-uu-sinh	jUu-sinh	renamed	False	consonant+vowel-sign ligature
+jha-uu-sinh	jhUu-sinh	renamed	False	consonant+vowel-sign ligature
+nya-uu-sinh	nyUu-sinh	renamed	True	consonant+vowel-sign ligature
+jnya-uu-sinh	jnyUu-sinh	renamed	True	consonant+vowel-sign ligature
+nyja-uu-sinh	nyjUu-sinh	renamed	True	consonant+vowel-sign ligature
+tta-uu-sinh	ttUu-sinh	renamed	False	consonant+vowel-sign ligature
+ttha-uu-sinh	tthUu-sinh	renamed	False	consonant+vowel-sign ligature
+dda-uu-sinh	ddUu-sinh	renamed	False	consonant+vowel-sign ligature
+ddha-uu-sinh	ddhUu-sinh	renamed	False	consonant+vowel-sign ligature
+nna-uu-sinh	nnUu-sinh	renamed	False	consonant+vowel-sign ligature
+nndda-uu-sinh	nnddUu-sinh	renamed	False	consonant+vowel-sign ligature
+ta-uu-sinh	tUu-sinh	renamed	True	consonant+vowel-sign ligature
+tha-uu-sinh	thUu-sinh	renamed	False	consonant+vowel-sign ligature
+da-uu-sinh	dUu-sinh	renamed	True	consonant+vowel-sign ligature
+dha-uu-sinh	dhUu-sinh	renamed	False	consonant+vowel-sign ligature
+na-uu-sinh	nUu-sinh	renamed	False	consonant+vowel-sign ligature
+nda-uu-sinh	ndUu-sinh	renamed	True	consonant+vowel-sign ligature
+pa-uu-sinh	pUu-sinh	renamed	False	consonant+vowel-sign ligature
+pha-uu-sinh	phUu-sinh	renamed	False	consonant+vowel-sign ligature
+ba-uu-sinh	bUu-sinh	renamed	False	consonant+vowel-sign ligature
+bha-uu-sinh	bhUu-sinh	renamed	True	consonant+vowel-sign ligature
+ma-uu-sinh	mUu-sinh	renamed	False	consonant+vowel-sign ligature
+mba-uu-sinh	mbUu-sinh	renamed	False	consonant+vowel-sign ligature
+ya-uu-sinh	yUu-sinh	renamed	False	consonant+vowel-sign ligature
+ra-uu-sinh	rUu-sinh	renamed	True	consonant+vowel-sign ligature
+la-uu-sinh	lUu-sinh	renamed	True	consonant+vowel-sign ligature
+va-uu-sinh	vUu-sinh	renamed	False	consonant+vowel-sign ligature
+sha-uu-sinh	shUu-sinh	renamed	True	consonant+vowel-sign ligature
+ssa-uu-sinh	ssUu-sinh	renamed	False	consonant+vowel-sign ligature
+sa-uu-sinh	sUu-sinh	renamed	False	consonant+vowel-sign ligature
+ha-uu-sinh	hUu-sinh	renamed	False	consonant+vowel-sign ligature
+lla-uu-sinh	llUu-sinh	renamed	True	consonant+vowel-sign ligature
+fa-uu-sinh	fUu-sinh	renamed	False	consonant+vowel-sign ligature
+ka_ssa-uu-sinh	kSsUu-sinh	renamed	False	consonant+vowel-sign ligature
+ka_va-uu-sinh	kVUu-sinh	renamed	False	consonant+vowel-sign ligature
+ta_va-uu-sinh	tVUu-sinh	renamed	False	consonant+vowel-sign ligature
+ta_tha-uu-sinh	tThUu-sinh	renamed	False	consonant+vowel-sign ligature
+na_da-uu-sinh	nDUu-sinh	renamed	False	consonant+vowel-sign ligature
+na_dha-uu-sinh	nDhUu-sinh	renamed	False	consonant+vowel-sign ligature
+na_va-uu-sinh	nVUu-sinh	renamed	False	consonant+vowel-sign ligature
+na_tha-uu-sinh	nThUu-sinh	renamed	False	consonant+vowel-sign ligature
+ga_dha-uu-sinh	gDhUu-sinh	renamed	False	consonant+vowel-sign ligature
+da_va-uu-sinh	dVUu-sinh	renamed	False	consonant+vowel-sign ligature
+da_dha-uu-sinh	dDhUu-sinh	renamed	False	consonant+vowel-sign ligature
+tta_ttha-uu-sinh	ttTthUu-sinh	renamed	False	consonant+vowel-sign ligature
+nya_ca-uu-sinh	nyCUu-sinh	renamed	False	consonant+vowel-sign ligature
+nya_cha-uu-sinh	nyChUu-sinh	renamed	False	consonant+vowel-sign ligature
+ca_ca-uu-sinh	cCUu-sinh	renamed	False	consonant+vowel-sign ligature
+ba_ba-uu-sinh	bBUu-sinh	renamed	False	consonant+vowel-sign ligature
+ra-ae-sign-sinh	rAe-sinh	renamed	True	consonant+vowel-sign ligature
+ra-aae-sign-sinh	rAae-sinh	renamed	True	consonant+vowel-sign ligature
+ka-rakar-sinh	kRa-sinh	renamed	False	rakar ligature
+kha-rakar-sinh	khRa-sinh	renamed	False	rakar ligature
+ga-rakar-sinh	gRa-sinh	renamed	False	rakar ligature
+gha-rakar-sinh	ghRa-sinh	renamed	False	rakar ligature
+ca-rakar-sinh	cRa-sinh	renamed	False	rakar ligature
+ja-rakar-sinh	jRa-sinh	renamed	False	rakar ligature
+jha-rakar-sinh	jhRa-sinh	renamed	False	rakar ligature
+nya-rakar-sinh	nyRa-sinh	renamed	True	rakar ligature
+jnya-rakar-sinh	jnyRa-sinh	renamed	False	rakar ligature
+nyja-rakar-sinh	nyjRa-sinh	renamed	False	rakar ligature
+tta-rakar-sinh	ttRa-sinh	renamed	False	rakar ligature
+dda-rakar-sinh	ddRa-sinh	renamed	False	rakar ligature
+ta-rakar-sinh	tRa-sinh	renamed	False	rakar ligature
+da-rakar-sinh	dRa-sinh	renamed	True	rakar ligature
+dha-rakar-sinh	dhRa-sinh	renamed	False	rakar ligature
+nda-rakar-sinh	ndRa-sinh	renamed	False	rakar ligature
+pa-rakar-sinh	pRa-sinh	renamed	False	rakar ligature
+ba-rakar-sinh	bRa-sinh	renamed	False	rakar ligature
+bha-rakar-sinh	bhRa-sinh	renamed	False	rakar ligature
+ma-rakar-sinh	mRa-sinh	renamed	False	rakar ligature
+va-rakar-sinh	vRa-sinh	renamed	False	rakar ligature
+sha-rakar-sinh	shRa-sinh	renamed	False	rakar ligature
+ssa-rakar-sinh	ssRa-sinh	renamed	False	rakar ligature
+sa-rakar-sinh	sRa-sinh	renamed	False	rakar ligature
+ha-rakar-sinh	hRa-sinh	renamed	False	rakar ligature
+fa-rakar-sinh	fRa-sinh	renamed	False	rakar ligature
+na_da-rakar-sinh	nDRa-sinh	renamed	True	rakar ligature
+ka-rakar-al-sinh	kR-sinh	renamed	False	rakar ligature
+kha-rakar-al-sinh	khR-sinh	renamed	False	rakar ligature
+ga-rakar-al-sinh	gR-sinh	renamed	False	rakar ligature
+gha-rakar-al-sinh	ghR-sinh	renamed	False	rakar ligature
+ca-rakar-al-sinh	cR-sinh	renamed	False	rakar ligature
+ja-rakar-al-sinh	jR-sinh	renamed	False	rakar ligature
+jha-rakar-al-sinh	jhR-sinh	renamed	False	rakar ligature
+nya-rakar-al-sinh	nyR-sinh	renamed	False	rakar ligature
+jnya-rakar-al-sinh	jnyR-sinh	renamed	False	rakar ligature
+nyja-rakar-al-sinh	nyjR-sinh	renamed	False	rakar ligature
+tta-rakar-al-sinh	ttR-sinh	renamed	False	rakar ligature
+dda-rakar-al-sinh	ddR-sinh	renamed	False	rakar ligature
+ta-rakar-al-sinh	tR-sinh	renamed	False	rakar ligature
+da-rakar-al-sinh	dR-sinh	renamed	False	rakar ligature
+dha-rakar-al-sinh	dhR-sinh	renamed	False	rakar ligature
+pa-rakar-al-sinh	pR-sinh	renamed	False	rakar ligature
+ba-rakar-al-sinh	bR-sinh	renamed	False	rakar ligature
+bha-rakar-al-sinh	bhR-sinh	renamed	False	rakar ligature
+ma-rakar-al-sinh	mR-sinh	renamed	False	rakar ligature
+va-rakar-al-sinh	vR-sinh	renamed	False	rakar ligature
+sha-rakar-al-sinh	shR-sinh	renamed	False	rakar ligature
+ssa-rakar-al-sinh	ssR-sinh	renamed	False	rakar ligature
+sa-rakar-al-sinh	sR-sinh	renamed	False	rakar ligature
+ha-rakar-al-sinh	hR-sinh	renamed	False	rakar ligature
+fa-rakar-al-sinh	fR-sinh	renamed	False	rakar ligature
+ka-rakar-i-sinh	kRI-sinh	renamed	False	rakar ligature
+kha-rakar-i-sinh	khRI-sinh	renamed	False	rakar ligature
+ga-rakar-i-sinh	gRI-sinh	renamed	False	rakar ligature
+gha-rakar-i-sinh	ghRI-sinh	renamed	False	rakar ligature
+ca-rakar-i-sinh	cRI-sinh	renamed	False	rakar ligature
+ja-rakar-i-sinh	jRI-sinh	renamed	False	rakar ligature
+jha-rakar-i-sinh	jhRI-sinh	renamed	False	rakar ligature
+nya-rakar-i-sinh	nyRI-sinh	renamed	False	rakar ligature
+jnya-rakar-i-sinh	jnyRI-sinh	renamed	False	rakar ligature
+tta-rakar-i-sinh	ttRI-sinh	renamed	False	rakar ligature
+dda-rakar-i-sinh	ddRI-sinh	renamed	False	rakar ligature
+ta-rakar-i-sinh	tRI-sinh	renamed	False	rakar ligature
+da-rakar-i-sinh	dRI-sinh	renamed	False	rakar ligature
+dha-rakar-i-sinh	dhRI-sinh	renamed	False	rakar ligature
+pa-rakar-i-sinh	pRI-sinh	renamed	False	rakar ligature
+ba-rakar-i-sinh	bRI-sinh	renamed	False	rakar ligature
+bha-rakar-i-sinh	bhRI-sinh	renamed	False	rakar ligature
+ma-rakar-i-sinh	mRI-sinh	renamed	False	rakar ligature
+va-rakar-i-sinh	vRI-sinh	renamed	False	rakar ligature
+sha-rakar-i-sinh	shRI-sinh	renamed	False	rakar ligature
+ssa-rakar-i-sinh	ssRI-sinh	renamed	False	rakar ligature
+sa-rakar-i-sinh	sRI-sinh	renamed	False	rakar ligature
+ha-rakar-i-sinh	hRI-sinh	renamed	False	rakar ligature
+fa-rakar-i-sinh	fRI-sinh	renamed	False	rakar ligature
+na_da-rakar-i-sinh	nDRI-sinh	renamed	False	rakar ligature
+ka-rakar-ii-sinh	kRIi-sinh	renamed	False	rakar ligature
+kha-rakar-ii-sinh	khRIi-sinh	renamed	False	rakar ligature
+ga-rakar-ii-sinh	gRIi-sinh	renamed	False	rakar ligature
+gha-rakar-ii-sinh	ghRIi-sinh	renamed	False	rakar ligature
+ca-rakar-ii-sinh	cRIi-sinh	renamed	False	rakar ligature
+ja-rakar-ii-sinh	jRIi-sinh	renamed	False	rakar ligature
+jha-rakar-ii-sinh	jhRIi-sinh	renamed	False	rakar ligature
+nya-rakar-ii-sinh	nyRIi-sinh	renamed	False	rakar ligature
+jnya-rakar-ii-sinh	jnyRIi-sinh	renamed	False	rakar ligature
+tta-rakar-ii-sinh	ttRIi-sinh	renamed	False	rakar ligature
+dda-rakar-ii-sinh	ddRIi-sinh	renamed	False	rakar ligature
+ta-rakar-ii-sinh	tRIi-sinh	renamed	False	rakar ligature
+da-rakar-ii-sinh	dRIi-sinh	renamed	False	rakar ligature
+dha-rakar-ii-sinh	dhRIi-sinh	renamed	False	rakar ligature
+pa-rakar-ii-sinh	pRIi-sinh	renamed	False	rakar ligature
+ba-rakar-ii-sinh	bRIi-sinh	renamed	False	rakar ligature
+bha-rakar-ii-sinh	bhRIi-sinh	renamed	False	rakar ligature
+ma-rakar-ii-sinh	mRIi-sinh	renamed	False	rakar ligature
+va-rakar-ii-sinh	vRIi-sinh	renamed	False	rakar ligature
+sha-rakar-ii-sinh	shRIi-sinh	renamed	False	rakar ligature
+ssa-rakar-ii-sinh	ssRIi-sinh	renamed	False	rakar ligature
+sa-rakar-ii-sinh	sRIi-sinh	renamed	False	rakar ligature
+ha-rakar-ii-sinh	hRIi-sinh	renamed	False	rakar ligature
+fa-rakar-ii-sinh	fRIi-sinh	renamed	False	rakar ligature
+na_da-rakar-ii-sinh	nDRIi-sinh	renamed	False	rakar ligature
+ka-repha-sinh	ka_repha-sinh	renamed	False	repaya (repha) combination
+kha-repha-sinh	kha_repha-sinh	renamed	False	repaya (repha) combination
+ga-repha-sinh	ga_repha-sinh	renamed	False	repaya (repha) combination
+gha-repha-sinh	gha_repha-sinh	renamed	False	repaya (repha) combination
+nga-repha-sinh	nga_repha-sinh	renamed	False	repaya (repha) combination
+ngga-repha-sinh	nnga_repha-sinh	renamed	False	repaya (repha) combination
+ca-repha-sinh	ca_repha-sinh	renamed	False	repaya (repha) combination
+cha-repha-sinh	cha_repha-sinh	renamed	False	repaya (repha) combination
+ja-repha-sinh	ja_repha-sinh	renamed	False	repaya (repha) combination
+jha-repha-sinh	jha_repha-sinh	renamed	False	repaya (repha) combination
+nya-repha-sinh	nya_repha-sinh	renamed	False	repaya (repha) combination
+jnya-repha-sinh	jnya_repha-sinh	renamed	False	repaya (repha) combination
+nyja-repha-sinh	nyja_repha-sinh	renamed	False	repaya (repha) combination
+tta-repha-sinh	tta_repha-sinh	renamed	False	repaya (repha) combination
+ttha-repha-sinh	ttha_repha-sinh	renamed	False	repaya (repha) combination
+dda-repha-sinh	dda_repha-sinh	renamed	False	repaya (repha) combination
+ddha-repha-sinh	ddha_repha-sinh	renamed	False	repaya (repha) combination
+nna-repha-sinh	nna_repha-sinh	renamed	False	repaya (repha) combination
+nndda-repha-sinh	nndda_repha-sinh	renamed	False	repaya (repha) combination
+ta-repha-sinh	ta_repha-sinh	renamed	False	repaya (repha) combination
+tha-repha-sinh	tha_repha-sinh	renamed	False	repaya (repha) combination
+da-repha-sinh	da_repha-sinh	renamed	False	repaya (repha) combination
+dha-repha-sinh	dha_repha-sinh	renamed	False	repaya (repha) combination
+na-repha-sinh	na_repha-sinh	renamed	False	repaya (repha) combination
+nda-repha-sinh	nda_repha-sinh	renamed	False	repaya (repha) combination
+pa-repha-sinh	pa_repha-sinh	renamed	False	repaya (repha) combination
+pha-repha-sinh	pha_repha-sinh	renamed	False	repaya (repha) combination
+ba-repha-sinh	ba_repha-sinh	renamed	False	repaya (repha) combination
+bha-repha-sinh	bha_repha-sinh	renamed	False	repaya (repha) combination
+ma-repha-sinh	ma_repha-sinh	renamed	False	repaya (repha) combination
+mba-repha-sinh	mba_repha-sinh	renamed	False	repaya (repha) combination
+ya-repha-sinh	ya_repha-sinh	renamed	False	repaya (repha) combination
+ra-repha-sinh	ra_repha-sinh	renamed	False	repaya (repha) combination
+la-repha-sinh	la_repha-sinh	renamed	False	repaya (repha) combination
+va-repha-sinh	va_repha-sinh	renamed	False	repaya (repha) combination
+sha-repha-sinh	sha_repha-sinh	renamed	False	repaya (repha) combination
+ssa-repha-sinh	ssa_repha-sinh	renamed	False	repaya (repha) combination
+sa-repha-sinh	sa_repha-sinh	renamed	False	repaya (repha) combination
+ha-repha-sinh	ha_repha-sinh	renamed	False	repaya (repha) combination
+lla-repha-sinh	lla_repha-sinh	renamed	False	repaya (repha) combination
+fa-repha-sinh	fa_repha-sinh	renamed	False	repaya (repha) combination
+ka_ssa-repha-sinh	kSsa_repha-sinh	renamed	False	repaya (repha) combination
+ka_va-repha-sinh	kVa_repha-sinh	renamed	False	repaya (repha) combination
+ta_va-repha-sinh	tVa_repha-sinh	renamed	False	repaya (repha) combination
+ta_tha-repha-sinh	tTha_repha-sinh	renamed	False	repaya (repha) combination
+na_da-repha-sinh	nDa_repha-sinh	renamed	False	repaya (repha) combination
+na_dha-repha-sinh	nDha_repha-sinh	renamed	False	repaya (repha) combination
+na_va-repha-sinh	nVa_repha-sinh	renamed	False	repaya (repha) combination
+na_tha-repha-sinh	nTha_repha-sinh	renamed	False	repaya (repha) combination
+ga_dha-repha-sinh	gDha_repha-sinh	renamed	False	repaya (repha) combination
+da_va-repha-sinh	dVa_repha-sinh	renamed	False	repaya (repha) combination
+da_dha-repha-sinh	dDha_repha-sinh	renamed	False	repaya (repha) combination
+tta_ttha-repha-sinh	ttTtha_repha-sinh	renamed	False	repaya (repha) combination
+nya_ca-repha-sinh	nyCa_repha-sinh	renamed	False	repaya (repha) combination
+nya_cha-repha-sinh	nyCha_repha-sinh	renamed	False	repaya (repha) combination
+ca_ca-repha-sinh	cCa_repha-sinh	renamed	False	repaya (repha) combination
+ba_ba-repha-sinh	bBa_repha-sinh	renamed	False	repaya (repha) combination
+yansa-sign.i-sinh	yasign_isign-sinh	renamed	False	yansaya combination
+yansa-sign.ii-sinh	yasign_iisign-sinh	renamed	False	yansaya combination
+yansa-sign.repha-sinh	yasign_repha-sinh	renamed	False	yansaya combination
+yansa-sign-sinh	yasign-sinh	renamed	True	standalone sign
+yansa-sign-repha-aa-sinh	yasign_repha_aasign-sinh	renamed	False	yansaya combination
+yansa-sign-uu-sinh	yasign_uusign-sinh	renamed	False	yansaya combination
+yansa-sign-u-sinh	yasign_usign-sinh	renamed	False	yansaya combination
+yansa-sign-repha-u-sinh	yasign_repha_usign-sinh	renamed	False	yansaya combination
+yansa-sign-repha-uu-sinh	yasign_repha_uusign-sinh	renamed	False	yansaya combination
+yansa-sign.al-sinh	yasign_virama-sinh	renamed	False	yansaya combination
+da-ae.ss01-sinh	dae._c-sinh	renamed	True	ss01 below-base vowel form
+da-aae.ss01-sinh	daae._c-sinh	renamed	True	ss01 below-base vowel form
+da-aa.ss01-sinh	daa._c-sinh	renamed	True	ss01 below-base vowel form
+da-vocalicR.ss01-sinh	dvocalicr._c-sinh	renamed	True	ss01 below-base vowel form
+da-vocalicRr.ss01-sinh	dvocalicrr._c-sinh	renamed	True	ss01 below-base vowel form
+da-yansa.post.ss01-sinh	dya._c-sinh	renamed	True	ss01 yansa below-base form
+da-yansa-aa.post.ss01-sinh	dyaa._c-sinh	renamed	True	ss01 yansa below-base form
+da-yansa-u.post.ss01-sinh	dyU._c-sinh	renamed	True	ss01 yansa below-base form
+da-yansa-oo.post.ss01-sinh	da_yansa_oosign-sinh	renamed	False	explicit override
+da-yansa-uu.post.ss01-sinh	dyUu._c-sinh	renamed	True	ss01 yansa below-base form
+nda-ae.ss01-sinh	ndae._c-sinh	renamed	False	ss01 below-base vowel form
+nda-aa.ss01-sinh	ndaa._c-sinh	renamed	False	ss01 below-base vowel form
+nda-aae.ss01-sinh	ndaae._c-sinh	renamed	False	ss01 below-base vowel form
+jnya-ae.ss01-sinh	jnyae._c-sinh	renamed	False	ss01 below-base vowel form
+jnya-aae.ss01-sinh	jnyaae._c-sinh	renamed	False	ss01 below-base vowel form
+jnya-aa.ss01-sinh	jnyaa._c-sinh	renamed	False	ss01 below-base vowel form
+nya-ae.ss01-sinh	nyae._c-sinh	renamed	True	ss01 below-base vowel form
+nya-aae.ss01-sinh	nyaae._c-sinh	renamed	True	ss01 below-base vowel form
+nya-aa.ss01-sinh	nyaa._c-sinh	renamed	True	ss01 below-base vowel form
+na_da-aa.ss01-sinh	nDaa._c-sinh	renamed	True	ss01 below-base vowel form
+na_da-aae.ss01-sinh	nDaae._c-sinh	renamed	True	ss01 below-base vowel form
+na_da-ae.ss01-sinh	nDae._c-sinh	renamed	True	ss01 below-base vowel form
+da-aa.al.ss01-sinh	daa_virama._c-sinh	renamed	True	ss01 below-base vowel form
+nda-aa.al.ss01-sinh	ndaa_virama._c-sinh	renamed	False	ss01 below-base vowel form
+jnya-aa.al.ss01-sinh	jnyaa_virama._c-sinh	renamed	False	ss01 below-base vowel form
+nya-aa.al.ss01-sinh	nyaa_virama._c-sinh	renamed	True	ss01 below-base vowel form
+na_da-aa.al.ss01-sinh	nDaa_virama._c-sinh	renamed	True	ss01 below-base vowel form
+da-rakar-aa.ss01-sinh	dRaa._c-sinh	renamed	True	ss01 rakar below-base form
+nda-rakar-aa.ss01-sinh	ndRaa._c-sinh	renamed	False	ss01 rakar below-base form
+anusvara_sha-sinh	anusvarayaSha-sinh	renamed	True	anusvaraya + sha
+anusvara_sha-i-sinh	anusvarayaShI-sinh	renamed	False	anusvarayaSha + vowel sign
+anusvara_sha-al-sinh	anusvarayaSh-sinh	renamed	False	anusvarayaSha + virama
+anusvara_sha-ii-sinh	anusvarayaShIi-sinh	renamed	False	anusvarayaSha + vowel sign
+anusvara_sha-u-sinh	anusvarayaShU-sinh	renamed	False	anusvarayaSha + vowel sign
+anusvara_sha-uu-sinh	anusvarayaShUu-sinh	renamed	False	anusvarayaSha + vowel sign
+A	A	skip	False	not a Sinhala (-sinh) glyph
+Aacute	Aacute	skip	False	not a Sinhala (-sinh) glyph
+Abreve	Abreve	skip	False	not a Sinhala (-sinh) glyph
+Acircumflex	Acircumflex	skip	False	not a Sinhala (-sinh) glyph
+Adieresis	Adieresis	skip	False	not a Sinhala (-sinh) glyph
+Agrave	Agrave	skip	False	not a Sinhala (-sinh) glyph
+Amacron	Amacron	skip	False	not a Sinhala (-sinh) glyph
+Aogonek	Aogonek	skip	False	not a Sinhala (-sinh) glyph
+Aring	Aring	skip	False	not a Sinhala (-sinh) glyph
+Atilde	Atilde	skip	False	not a Sinhala (-sinh) glyph
+AE	AE	skip	False	not a Sinhala (-sinh) glyph
+B	B	skip	False	not a Sinhala (-sinh) glyph
+C	C	skip	False	not a Sinhala (-sinh) glyph
+Cacute	Cacute	skip	False	not a Sinhala (-sinh) glyph
+Ccaron	Ccaron	skip	False	not a Sinhala (-sinh) glyph
+Ccedilla	Ccedilla	skip	False	not a Sinhala (-sinh) glyph
+D	D	skip	False	not a Sinhala (-sinh) glyph
+Dcaron	Dcaron	skip	False	not a Sinhala (-sinh) glyph
+Dcroat	Dcroat	skip	False	not a Sinhala (-sinh) glyph
+Eth	Eth	skip	False	not a Sinhala (-sinh) glyph
+E	E	skip	False	not a Sinhala (-sinh) glyph
+Eacute	Eacute	skip	False	not a Sinhala (-sinh) glyph
+Ecaron	Ecaron	skip	False	not a Sinhala (-sinh) glyph
+Ecircumflex	Ecircumflex	skip	False	not a Sinhala (-sinh) glyph
+Edieresis	Edieresis	skip	False	not a Sinhala (-sinh) glyph
+Edotaccent	Edotaccent	skip	False	not a Sinhala (-sinh) glyph
+Egrave	Egrave	skip	False	not a Sinhala (-sinh) glyph
+Emacron	Emacron	skip	False	not a Sinhala (-sinh) glyph
+Eogonek	Eogonek	skip	False	not a Sinhala (-sinh) glyph
+F	F	skip	False	not a Sinhala (-sinh) glyph
+G	G	skip	False	not a Sinhala (-sinh) glyph
+Gbreve	Gbreve	skip	False	not a Sinhala (-sinh) glyph
+Gcommaaccent	Gcommaaccent	skip	False	not a Sinhala (-sinh) glyph
+H	H	skip	False	not a Sinhala (-sinh) glyph
+I	I	skip	False	not a Sinhala (-sinh) glyph
+Iacute	Iacute	skip	False	not a Sinhala (-sinh) glyph
+Icircumflex	Icircumflex	skip	False	not a Sinhala (-sinh) glyph
+Idieresis	Idieresis	skip	False	not a Sinhala (-sinh) glyph
+Idotaccent	Idotaccent	skip	False	not a Sinhala (-sinh) glyph
+Igrave	Igrave	skip	False	not a Sinhala (-sinh) glyph
+Imacron	Imacron	skip	False	not a Sinhala (-sinh) glyph
+Iogonek	Iogonek	skip	False	not a Sinhala (-sinh) glyph
+J	J	skip	False	not a Sinhala (-sinh) glyph
+K	K	skip	False	not a Sinhala (-sinh) glyph
+Kcommaaccent	Kcommaaccent	skip	False	not a Sinhala (-sinh) glyph
+L	L	skip	False	not a Sinhala (-sinh) glyph
+Lacute	Lacute	skip	False	not a Sinhala (-sinh) glyph
+Lcaron	Lcaron	skip	False	not a Sinhala (-sinh) glyph
+Lcommaaccent	Lcommaaccent	skip	False	not a Sinhala (-sinh) glyph
+Lslash	Lslash	skip	False	not a Sinhala (-sinh) glyph
+M	M	skip	False	not a Sinhala (-sinh) glyph
+N	N	skip	False	not a Sinhala (-sinh) glyph
+Nacute	Nacute	skip	False	not a Sinhala (-sinh) glyph
+Ncaron	Ncaron	skip	False	not a Sinhala (-sinh) glyph
+Ncommaaccent	Ncommaaccent	skip	False	not a Sinhala (-sinh) glyph
+Ntilde	Ntilde	skip	False	not a Sinhala (-sinh) glyph
+O	O	skip	False	not a Sinhala (-sinh) glyph
+Oacute	Oacute	skip	False	not a Sinhala (-sinh) glyph
+Ocircumflex	Ocircumflex	skip	False	not a Sinhala (-sinh) glyph
+Odieresis	Odieresis	skip	False	not a Sinhala (-sinh) glyph
+Ograve	Ograve	skip	False	not a Sinhala (-sinh) glyph
+Ohungarumlaut	Ohungarumlaut	skip	False	not a Sinhala (-sinh) glyph
+Omacron	Omacron	skip	False	not a Sinhala (-sinh) glyph
+Oslash	Oslash	skip	False	not a Sinhala (-sinh) glyph
+Otilde	Otilde	skip	False	not a Sinhala (-sinh) glyph
+OE	OE	skip	False	not a Sinhala (-sinh) glyph
+P	P	skip	False	not a Sinhala (-sinh) glyph
+Thorn	Thorn	skip	False	not a Sinhala (-sinh) glyph
+Q	Q	skip	False	not a Sinhala (-sinh) glyph
+R	R	skip	False	not a Sinhala (-sinh) glyph
+Racute	Racute	skip	False	not a Sinhala (-sinh) glyph
+Rcaron	Rcaron	skip	False	not a Sinhala (-sinh) glyph
+Rcommaaccent	Rcommaaccent	skip	False	not a Sinhala (-sinh) glyph
+S	S	skip	False	not a Sinhala (-sinh) glyph
+Sacute	Sacute	skip	False	not a Sinhala (-sinh) glyph
+Scaron	Scaron	skip	False	not a Sinhala (-sinh) glyph
+Scedilla	Scedilla	skip	False	not a Sinhala (-sinh) glyph
+Scommaaccent	Scommaaccent	skip	False	not a Sinhala (-sinh) glyph
+T	T	skip	False	not a Sinhala (-sinh) glyph
+Tcaron	Tcaron	skip	False	not a Sinhala (-sinh) glyph
+Tcedilla	Tcedilla	skip	False	not a Sinhala (-sinh) glyph
+Tcommaaccent	Tcommaaccent	skip	False	not a Sinhala (-sinh) glyph
+U	U	skip	False	not a Sinhala (-sinh) glyph
+Uacute	Uacute	skip	False	not a Sinhala (-sinh) glyph
+Ucircumflex	Ucircumflex	skip	False	not a Sinhala (-sinh) glyph
+Udieresis	Udieresis	skip	False	not a Sinhala (-sinh) glyph
+Ugrave	Ugrave	skip	False	not a Sinhala (-sinh) glyph
+Uhungarumlaut	Uhungarumlaut	skip	False	not a Sinhala (-sinh) glyph
+Umacron	Umacron	skip	False	not a Sinhala (-sinh) glyph
+Uogonek	Uogonek	skip	False	not a Sinhala (-sinh) glyph
+Uring	Uring	skip	False	not a Sinhala (-sinh) glyph
+V	V	skip	False	not a Sinhala (-sinh) glyph
+W	W	skip	False	not a Sinhala (-sinh) glyph
+X	X	skip	False	not a Sinhala (-sinh) glyph
+Y	Y	skip	False	not a Sinhala (-sinh) glyph
+Yacute	Yacute	skip	False	not a Sinhala (-sinh) glyph
+Ydieresis	Ydieresis	skip	False	not a Sinhala (-sinh) glyph
+Z	Z	skip	False	not a Sinhala (-sinh) glyph
+Zacute	Zacute	skip	False	not a Sinhala (-sinh) glyph
+Zcaron	Zcaron	skip	False	not a Sinhala (-sinh) glyph
+Zdotaccent	Zdotaccent	skip	False	not a Sinhala (-sinh) glyph
+a	a	skip	False	not a Sinhala (-sinh) glyph
+aacute	aacute	skip	False	not a Sinhala (-sinh) glyph
+abreve	abreve	skip	False	not a Sinhala (-sinh) glyph
+acircumflex	acircumflex	skip	False	not a Sinhala (-sinh) glyph
+adieresis	adieresis	skip	False	not a Sinhala (-sinh) glyph
+agrave	agrave	skip	False	not a Sinhala (-sinh) glyph
+amacron	amacron	skip	False	not a Sinhala (-sinh) glyph
+aogonek	aogonek	skip	False	not a Sinhala (-sinh) glyph
+aring	aring	skip	False	not a Sinhala (-sinh) glyph
+atilde	atilde	skip	False	not a Sinhala (-sinh) glyph
+ae	ae	skip	False	not a Sinhala (-sinh) glyph
+b	b	skip	False	not a Sinhala (-sinh) glyph
+c	c	skip	False	not a Sinhala (-sinh) glyph
+cacute	cacute	skip	False	not a Sinhala (-sinh) glyph
+ccaron	ccaron	skip	False	not a Sinhala (-sinh) glyph
+ccedilla	ccedilla	skip	False	not a Sinhala (-sinh) glyph
+d	d	skip	False	not a Sinhala (-sinh) glyph
+dcaron	dcaron	skip	False	not a Sinhala (-sinh) glyph
+dcroat	dcroat	skip	False	not a Sinhala (-sinh) glyph
+eth	eth	skip	False	not a Sinhala (-sinh) glyph
+e	e	skip	False	not a Sinhala (-sinh) glyph
+eacute	eacute	skip	False	not a Sinhala (-sinh) glyph
+ecaron	ecaron	skip	False	not a Sinhala (-sinh) glyph
+ecircumflex	ecircumflex	skip	False	not a Sinhala (-sinh) glyph
+edieresis	edieresis	skip	False	not a Sinhala (-sinh) glyph
+edotaccent	edotaccent	skip	False	not a Sinhala (-sinh) glyph
+egrave	egrave	skip	False	not a Sinhala (-sinh) glyph
+emacron	emacron	skip	False	not a Sinhala (-sinh) glyph
+eogonek	eogonek	skip	False	not a Sinhala (-sinh) glyph
+f	f	skip	False	not a Sinhala (-sinh) glyph
+g	g	skip	False	not a Sinhala (-sinh) glyph
+gbreve	gbreve	skip	False	not a Sinhala (-sinh) glyph
+h	h	skip	False	not a Sinhala (-sinh) glyph
+i	i	skip	False	not a Sinhala (-sinh) glyph
+dotlessi	dotlessi	skip	False	not a Sinhala (-sinh) glyph
+iacute	iacute	skip	False	not a Sinhala (-sinh) glyph
+icircumflex	icircumflex	skip	False	not a Sinhala (-sinh) glyph
+idieresis	idieresis	skip	False	not a Sinhala (-sinh) glyph
+igrave	igrave	skip	False	not a Sinhala (-sinh) glyph
+imacron	imacron	skip	False	not a Sinhala (-sinh) glyph
+iogonek	iogonek	skip	False	not a Sinhala (-sinh) glyph
+j	j	skip	False	not a Sinhala (-sinh) glyph
+k	k	skip	False	not a Sinhala (-sinh) glyph
+l	l	skip	False	not a Sinhala (-sinh) glyph
+lacute	lacute	skip	False	not a Sinhala (-sinh) glyph
+lcaron	lcaron	skip	False	not a Sinhala (-sinh) glyph
+lslash	lslash	skip	False	not a Sinhala (-sinh) glyph
+m	m	skip	False	not a Sinhala (-sinh) glyph
+n	n	skip	False	not a Sinhala (-sinh) glyph
+nacute	nacute	skip	False	not a Sinhala (-sinh) glyph
+ncaron	ncaron	skip	False	not a Sinhala (-sinh) glyph
+ntilde	ntilde	skip	False	not a Sinhala (-sinh) glyph
+o	o	skip	False	not a Sinhala (-sinh) glyph
+oacute	oacute	skip	False	not a Sinhala (-sinh) glyph
+ocircumflex	ocircumflex	skip	False	not a Sinhala (-sinh) glyph
+odieresis	odieresis	skip	False	not a Sinhala (-sinh) glyph
+ograve	ograve	skip	False	not a Sinhala (-sinh) glyph
+ohungarumlaut	ohungarumlaut	skip	False	not a Sinhala (-sinh) glyph
+omacron	omacron	skip	False	not a Sinhala (-sinh) glyph
+oslash	oslash	skip	False	not a Sinhala (-sinh) glyph
+otilde	otilde	skip	False	not a Sinhala (-sinh) glyph
+oe	oe	skip	False	not a Sinhala (-sinh) glyph
+p	p	skip	False	not a Sinhala (-sinh) glyph
+thorn	thorn	skip	False	not a Sinhala (-sinh) glyph
+q	q	skip	False	not a Sinhala (-sinh) glyph
+r	r	skip	False	not a Sinhala (-sinh) glyph
+racute	racute	skip	False	not a Sinhala (-sinh) glyph
+rcaron	rcaron	skip	False	not a Sinhala (-sinh) glyph
+s	s	skip	False	not a Sinhala (-sinh) glyph
+sacute	sacute	skip	False	not a Sinhala (-sinh) glyph
+scaron	scaron	skip	False	not a Sinhala (-sinh) glyph
+germandbls	germandbls	skip	False	not a Sinhala (-sinh) glyph
+t	t	skip	False	not a Sinhala (-sinh) glyph
+tcaron	tcaron	skip	False	not a Sinhala (-sinh) glyph
+u	u	skip	False	not a Sinhala (-sinh) glyph
+uacute	uacute	skip	False	not a Sinhala (-sinh) glyph
+ucircumflex	ucircumflex	skip	False	not a Sinhala (-sinh) glyph
+udieresis	udieresis	skip	False	not a Sinhala (-sinh) glyph
+ugrave	ugrave	skip	False	not a Sinhala (-sinh) glyph
+uhungarumlaut	uhungarumlaut	skip	False	not a Sinhala (-sinh) glyph
+umacron	umacron	skip	False	not a Sinhala (-sinh) glyph
+uni0123	uni0123	skip	False	not a Sinhala (-sinh) glyph
+uni0137	uni0137	skip	False	not a Sinhala (-sinh) glyph
+uni013C	uni013C	skip	False	not a Sinhala (-sinh) glyph
+uni0146	uni0146	skip	False	not a Sinhala (-sinh) glyph
+uni0157	uni0157	skip	False	not a Sinhala (-sinh) glyph
+uni015F	uni015F	skip	False	not a Sinhala (-sinh) glyph
+uni0163	uni0163	skip	False	not a Sinhala (-sinh) glyph
+uni0219	uni0219	skip	False	not a Sinhala (-sinh) glyph
+uni021B	uni021B	skip	False	not a Sinhala (-sinh) glyph
+uogonek	uogonek	skip	False	not a Sinhala (-sinh) glyph
+uring	uring	skip	False	not a Sinhala (-sinh) glyph
+v	v	skip	False	not a Sinhala (-sinh) glyph
+w	w	skip	False	not a Sinhala (-sinh) glyph
+x	x	skip	False	not a Sinhala (-sinh) glyph
+y	y	skip	False	not a Sinhala (-sinh) glyph
+yacute	yacute	skip	False	not a Sinhala (-sinh) glyph
+ydieresis	ydieresis	skip	False	not a Sinhala (-sinh) glyph
+z	z	skip	False	not a Sinhala (-sinh) glyph
+zacute	zacute	skip	False	not a Sinhala (-sinh) glyph
+zcaron	zcaron	skip	False	not a Sinhala (-sinh) glyph
+zdotaccent	zdotaccent	skip	False	not a Sinhala (-sinh) glyph
+f_f	f_f	skip	False	not a Sinhala (-sinh) glyph
+f_f_i	f_f_i	skip	False	not a Sinhala (-sinh) glyph
+f_f_l	f_f_l	skip	False	not a Sinhala (-sinh) glyph
+fi	fi	skip	False	not a Sinhala (-sinh) glyph
+fl	fl	skip	False	not a Sinhala (-sinh) glyph
+ordfeminine	ordfeminine	skip	False	not a Sinhala (-sinh) glyph
+ordmasculine	ordmasculine	skip	False	not a Sinhala (-sinh) glyph
+pi	pi	skip	False	not a Sinhala (-sinh) glyph
+a-taml	a-taml	skip	False	not a Sinhala (-sinh) glyph
+aa-taml	aa-taml	skip	False	not a Sinhala (-sinh) glyph
+i-taml	i-taml	skip	False	not a Sinhala (-sinh) glyph
+ii-taml	ii-taml	skip	False	not a Sinhala (-sinh) glyph
+u-taml	u-taml	skip	False	not a Sinhala (-sinh) glyph
+uu-taml	uu-taml	skip	False	not a Sinhala (-sinh) glyph
+e-taml	e-taml	skip	False	not a Sinhala (-sinh) glyph
+ee-taml	ee-taml	skip	False	not a Sinhala (-sinh) glyph
+ai-taml	ai-taml	skip	False	not a Sinhala (-sinh) glyph
+o-taml	o-taml	skip	False	not a Sinhala (-sinh) glyph
+oo-taml	oo-taml	skip	False	not a Sinhala (-sinh) glyph
+au-taml	au-taml	skip	False	not a Sinhala (-sinh) glyph
+ka-taml	ka-taml	skip	False	not a Sinhala (-sinh) glyph
+nga-taml	nga-taml	skip	False	not a Sinhala (-sinh) glyph
+ca-taml	ca-taml	skip	False	not a Sinhala (-sinh) glyph
+ja-taml	ja-taml	skip	False	not a Sinhala (-sinh) glyph
+nya-taml	nya-taml	skip	False	not a Sinhala (-sinh) glyph
+tta-taml	tta-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-taml	nna-taml	skip	False	not a Sinhala (-sinh) glyph
+ta-taml	ta-taml	skip	False	not a Sinhala (-sinh) glyph
+na-taml	na-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-taml	nna2-taml	skip	False	not a Sinhala (-sinh) glyph
+pa-taml	pa-taml	skip	False	not a Sinhala (-sinh) glyph
+ma-taml	ma-taml	skip	False	not a Sinhala (-sinh) glyph
+ya-taml	ya-taml	skip	False	not a Sinhala (-sinh) glyph
+ra-taml	ra-taml	skip	False	not a Sinhala (-sinh) glyph
+rra-taml	rra-taml	skip	False	not a Sinhala (-sinh) glyph
+la-taml	la-taml	skip	False	not a Sinhala (-sinh) glyph
+lla-taml	lla-taml	skip	False	not a Sinhala (-sinh) glyph
+zha-taml	zha-taml	skip	False	not a Sinhala (-sinh) glyph
+va-taml	va-taml	skip	False	not a Sinhala (-sinh) glyph
+sha-taml	sha-taml	skip	False	not a Sinhala (-sinh) glyph
+ssa-taml	ssa-taml	skip	False	not a Sinhala (-sinh) glyph
+sa-taml	sa-taml	skip	False	not a Sinhala (-sinh) glyph
+ha-taml	ha-taml	skip	False	not a Sinhala (-sinh) glyph
+om-taml	om-taml	skip	False	not a Sinhala (-sinh) glyph
+visarga-taml	visarga-taml	skip	False	not a Sinhala (-sinh) glyph
+oneArchaic-sinhala	archaicone-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+twoArchaic-sinhala	archaictwo-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+threeArchaic-sinhala	archaicthree-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+fourArchaic-sinhala	archaicfour-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+fiveArchaic-sinhala	archaicfive-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+sixArchaic-sinhala	archaicsix-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+sevenArchaic-sinhala	archaicseven-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+eightArchaic-sinhala	archaiceight-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+nineArchaic-sinhala	archaicnine-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+tenArchaic-sinhala	archaicten-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+twentyArchaic-sinhala	archaictwenty-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+thirtyArchaic-sinhala	archaicthirty-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+fortyArchaic-sinhala	archaicforty-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+fiftyArchaic-sinhala	archaicfifty-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+sixtyArchaic-sinhala	archaicsixty-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+seventyArchaic-sinhala	archaicseventy-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+eightyArchaic-sinhala	archaiceighty-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+ninetyArchaic-sinhala	archaicninety-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+onehundredArchaic-sinhala	archaiconehundred-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+onethousandArchaic-sinhala	archaiconethousand-sinh	renamed	True	archaic numeral namespace -sinhala->-sinh
+sinEight_Zerolith	sinEight_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinFive_Zerolith	sinFive_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinFour_Zerolith	sinFour_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinNine_Zerolith	sinNine_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinOne_Zerolith	sinOne_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinSeven_Zerolith	sinSeven_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinSix_Zerolith	sinSix_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinThree_Zerolith	sinThree_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinTwo_Zerolith	sinTwo_Zerolith	skip	False	not a Sinhala (-sinh) glyph
+sinZerolith	sinZerolith	skip	False	not a Sinhala (-sinh) glyph
+sinOnelith	sinOnelith	skip	False	not a Sinhala (-sinh) glyph
+sinTwolith	sinTwolith	skip	False	not a Sinhala (-sinh) glyph
+sinThreelith	sinThreelith	skip	False	not a Sinhala (-sinh) glyph
+sinFourlith	sinFourlith	skip	False	not a Sinhala (-sinh) glyph
+sinFivelith	sinFivelith	skip	False	not a Sinhala (-sinh) glyph
+sinSixlith	sinSixlith	skip	False	not a Sinhala (-sinh) glyph
+sinSevenlith	sinSevenlith	skip	False	not a Sinhala (-sinh) glyph
+sinEightlith	sinEightlith	skip	False	not a Sinhala (-sinh) glyph
+sinNinelith	sinNinelith	skip	False	not a Sinhala (-sinh) glyph
+ten-taml	ten-taml	skip	False	not a Sinhala (-sinh) glyph
+hundred-taml	hundred-taml	skip	False	not a Sinhala (-sinh) glyph
+thousand-taml	thousand-taml	skip	False	not a Sinhala (-sinh) glyph
+zero-taml	zero-taml	skip	False	not a Sinhala (-sinh) glyph
+one-taml	one-taml	skip	False	not a Sinhala (-sinh) glyph
+two-taml	two-taml	skip	False	not a Sinhala (-sinh) glyph
+three-taml	three-taml	skip	False	not a Sinhala (-sinh) glyph
+four-taml	four-taml	skip	False	not a Sinhala (-sinh) glyph
+five-taml	five-taml	skip	False	not a Sinhala (-sinh) glyph
+six-taml	six-taml	skip	False	not a Sinhala (-sinh) glyph
+seven-taml	seven-taml	skip	False	not a Sinhala (-sinh) glyph
+eight-taml	eight-taml	skip	False	not a Sinhala (-sinh) glyph
+nine-taml	nine-taml	skip	False	not a Sinhala (-sinh) glyph
+zero	zero	skip	False	not a Sinhala (-sinh) glyph
+one	one	skip	False	not a Sinhala (-sinh) glyph
+two	two	skip	False	not a Sinhala (-sinh) glyph
+three	three	skip	False	not a Sinhala (-sinh) glyph
+four	four	skip	False	not a Sinhala (-sinh) glyph
+five	five	skip	False	not a Sinhala (-sinh) glyph
+six	six	skip	False	not a Sinhala (-sinh) glyph
+seven	seven	skip	False	not a Sinhala (-sinh) glyph
+eight	eight	skip	False	not a Sinhala (-sinh) glyph
+nine	nine	skip	False	not a Sinhala (-sinh) glyph
+zero.tf	zero.tf	skip	False	not a Sinhala (-sinh) glyph
+one.tf	one.tf	skip	False	not a Sinhala (-sinh) glyph
+two.tf	two.tf	skip	False	not a Sinhala (-sinh) glyph
+three.tf	three.tf	skip	False	not a Sinhala (-sinh) glyph
+four.tf	four.tf	skip	False	not a Sinhala (-sinh) glyph
+five.tf	five.tf	skip	False	not a Sinhala (-sinh) glyph
+six.tf	six.tf	skip	False	not a Sinhala (-sinh) glyph
+seven.tf	seven.tf	skip	False	not a Sinhala (-sinh) glyph
+eight.tf	eight.tf	skip	False	not a Sinhala (-sinh) glyph
+nine.tf	nine.tf	skip	False	not a Sinhala (-sinh) glyph
+zero.numr	zero.numr	skip	False	not a Sinhala (-sinh) glyph
+one.numr	one.numr	skip	False	not a Sinhala (-sinh) glyph
+two.numr	two.numr	skip	False	not a Sinhala (-sinh) glyph
+three.numr	three.numr	skip	False	not a Sinhala (-sinh) glyph
+four.numr	four.numr	skip	False	not a Sinhala (-sinh) glyph
+five.numr	five.numr	skip	False	not a Sinhala (-sinh) glyph
+six.numr	six.numr	skip	False	not a Sinhala (-sinh) glyph
+seven.numr	seven.numr	skip	False	not a Sinhala (-sinh) glyph
+eight.numr	eight.numr	skip	False	not a Sinhala (-sinh) glyph
+nine.numr	nine.numr	skip	False	not a Sinhala (-sinh) glyph
+fraction	fraction	skip	False	not a Sinhala (-sinh) glyph
+onehalf	onehalf	skip	False	not a Sinhala (-sinh) glyph
+onequarter	onequarter	skip	False	not a Sinhala (-sinh) glyph
+threequarters	threequarters	skip	False	not a Sinhala (-sinh) glyph
+onesuperior	onesuperior	skip	False	not a Sinhala (-sinh) glyph
+twosuperior	twosuperior	skip	False	not a Sinhala (-sinh) glyph
+threesuperior	threesuperior	skip	False	not a Sinhala (-sinh) glyph
+nbspace	nbspace	skip	False	not a Sinhala (-sinh) glyph
+zerowidthnonjoiner	zerowidthnonjoiner	skip	False	not a Sinhala (-sinh) glyph
+zerowidthjoiner	zerowidthjoiner	skip	False	not a Sinhala (-sinh) glyph
+uni0964	uni0964	skip	False	not a Sinhala (-sinh) glyph
+uni0965	uni0965	skip	False	not a Sinhala (-sinh) glyph
+sinKundaliya	sinKundaliya	skip	False	not a Sinhala (-sinh) glyph
+period	period	skip	False	not a Sinhala (-sinh) glyph
+comma	comma	skip	False	not a Sinhala (-sinh) glyph
+colon	colon	skip	False	not a Sinhala (-sinh) glyph
+semicolon	semicolon	skip	False	not a Sinhala (-sinh) glyph
+ellipsis	ellipsis	skip	False	not a Sinhala (-sinh) glyph
+exclam	exclam	skip	False	not a Sinhala (-sinh) glyph
+exclamdown	exclamdown	skip	False	not a Sinhala (-sinh) glyph
+question	question	skip	False	not a Sinhala (-sinh) glyph
+questiondown	questiondown	skip	False	not a Sinhala (-sinh) glyph
+periodcentered	periodcentered	skip	False	not a Sinhala (-sinh) glyph
+bullet	bullet	skip	False	not a Sinhala (-sinh) glyph
+asterisk	asterisk	skip	False	not a Sinhala (-sinh) glyph
+numbersign	numbersign	skip	False	not a Sinhala (-sinh) glyph
+slash	slash	skip	False	not a Sinhala (-sinh) glyph
+backslash	backslash	skip	False	not a Sinhala (-sinh) glyph
+hyphen	hyphen	skip	False	not a Sinhala (-sinh) glyph
+softhyphen	softhyphen	skip	False	not a Sinhala (-sinh) glyph
+endash	endash	skip	False	not a Sinhala (-sinh) glyph
+emdash	emdash	skip	False	not a Sinhala (-sinh) glyph
+short_dash2	short_dash2	skip	False	not a Sinhala (-sinh) glyph
+underscore	underscore	skip	False	not a Sinhala (-sinh) glyph
+parenleft	parenleft	skip	False	not a Sinhala (-sinh) glyph
+parenright	parenright	skip	False	not a Sinhala (-sinh) glyph
+braceleft	braceleft	skip	False	not a Sinhala (-sinh) glyph
+braceright	braceright	skip	False	not a Sinhala (-sinh) glyph
+bracketleft	bracketleft	skip	False	not a Sinhala (-sinh) glyph
+bracketright	bracketright	skip	False	not a Sinhala (-sinh) glyph
+quotesinglbase	quotesinglbase	skip	False	not a Sinhala (-sinh) glyph
+quotedblbase	quotedblbase	skip	False	not a Sinhala (-sinh) glyph
+quotedblleft	quotedblleft	skip	False	not a Sinhala (-sinh) glyph
+quotedblright	quotedblright	skip	False	not a Sinhala (-sinh) glyph
+quoteleft	quoteleft	skip	False	not a Sinhala (-sinh) glyph
+quoteright	quoteright	skip	False	not a Sinhala (-sinh) glyph
+guillemotleft	guillemotleft	skip	False	not a Sinhala (-sinh) glyph
+guillemotright	guillemotright	skip	False	not a Sinhala (-sinh) glyph
+guilsinglleft	guilsinglleft	skip	False	not a Sinhala (-sinh) glyph
+guilsinglright	guilsinglright	skip	False	not a Sinhala (-sinh) glyph
+quotedbl	quotedbl	skip	False	not a Sinhala (-sinh) glyph
+quotesingle	quotesingle	skip	False	not a Sinhala (-sinh) glyph
+florin	florin	skip	False	not a Sinhala (-sinh) glyph
+day-sign-taml	day-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+month-sign-taml	month-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+year-sign-taml	year-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+debit-sign-taml	debit-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+credit-sign-taml	credit-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+asabove-sign-taml	asabove-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+number-sign-taml	number-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+rupee-sign-taml	rupee-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+at	at	skip	False	not a Sinhala (-sinh) glyph
+ampersand	ampersand	skip	False	not a Sinhala (-sinh) glyph
+paragraph	paragraph	skip	False	not a Sinhala (-sinh) glyph
+section	section	skip	False	not a Sinhala (-sinh) glyph
+copyright	copyright	skip	False	not a Sinhala (-sinh) glyph
+registered	registered	skip	False	not a Sinhala (-sinh) glyph
+trademark	trademark	skip	False	not a Sinhala (-sinh) glyph
+degree	degree	skip	False	not a Sinhala (-sinh) glyph
+bar	bar	skip	False	not a Sinhala (-sinh) glyph
+brokenbar	brokenbar	skip	False	not a Sinhala (-sinh) glyph
+dagger	dagger	skip	False	not a Sinhala (-sinh) glyph
+uni2113	uni2113	skip	False	not a Sinhala (-sinh) glyph
+daggerdbl	daggerdbl	skip	False	not a Sinhala (-sinh) glyph
+estimated	estimated	skip	False	not a Sinhala (-sinh) glyph
+Euro	Euro	skip	False	not a Sinhala (-sinh) glyph
+cent	cent	skip	False	not a Sinhala (-sinh) glyph
+currency	currency	skip	False	not a Sinhala (-sinh) glyph
+dollar	dollar	skip	False	not a Sinhala (-sinh) glyph
+ruble	ruble	skip	False	not a Sinhala (-sinh) glyph
+rupeeIndian	rupeeIndian	skip	False	not a Sinhala (-sinh) glyph
+sterling	sterling	skip	False	not a Sinhala (-sinh) glyph
+uni20BA	uni20BA	skip	False	not a Sinhala (-sinh) glyph
+yen	yen	skip	False	not a Sinhala (-sinh) glyph
+bulletoperator	bulletoperator	skip	False	not a Sinhala (-sinh) glyph
+divisionslash	divisionslash	skip	False	not a Sinhala (-sinh) glyph
+plus	plus	skip	False	not a Sinhala (-sinh) glyph
+minus	minus	skip	False	not a Sinhala (-sinh) glyph
+multiply	multiply	skip	False	not a Sinhala (-sinh) glyph
+divide	divide	skip	False	not a Sinhala (-sinh) glyph
+equal	equal	skip	False	not a Sinhala (-sinh) glyph
+notequal	notequal	skip	False	not a Sinhala (-sinh) glyph
+greater	greater	skip	False	not a Sinhala (-sinh) glyph
+less	less	skip	False	not a Sinhala (-sinh) glyph
+greaterequal	greaterequal	skip	False	not a Sinhala (-sinh) glyph
+lessequal	lessequal	skip	False	not a Sinhala (-sinh) glyph
+plusminus	plusminus	skip	False	not a Sinhala (-sinh) glyph
+approxequal	approxequal	skip	False	not a Sinhala (-sinh) glyph
+asciitilde	asciitilde	skip	False	not a Sinhala (-sinh) glyph
+logicalnot	logicalnot	skip	False	not a Sinhala (-sinh) glyph
+asciicircum	asciicircum	skip	False	not a Sinhala (-sinh) glyph
+infinity	infinity	skip	False	not a Sinhala (-sinh) glyph
+integral	integral	skip	False	not a Sinhala (-sinh) glyph
+Ohm	Ohm	skip	False	not a Sinhala (-sinh) glyph
+increment	increment	skip	False	not a Sinhala (-sinh) glyph
+product	product	skip	False	not a Sinhala (-sinh) glyph
+summation	summation	skip	False	not a Sinhala (-sinh) glyph
+radical	radical	skip	False	not a Sinhala (-sinh) glyph
+partialdiff	partialdiff	skip	False	not a Sinhala (-sinh) glyph
+uni00B5	uni00B5	skip	False	not a Sinhala (-sinh) glyph
+percent	percent	skip	False	not a Sinhala (-sinh) glyph
+perthousand	perthousand	skip	False	not a Sinhala (-sinh) glyph
+dottedCircle	dottedCircle	skip	False	not a Sinhala (-sinh) glyph
+lozenge	lozenge	skip	False	not a Sinhala (-sinh) glyph
+candrabindu-sinh.001	candrabindu-sinh.001	unchanged	False	standalone sign (+ alternate suffix .001)
+ii-sign-taml	ii-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+virama-sign-taml	virama-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+anusvara-taml	anusvara-taml	skip	False	not a Sinhala (-sinh) glyph
+aa-sign-taml	aa-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign-taml	i-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+u-sign-taml	u-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+uu-sign-taml	uu-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+e-sign-taml	e-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+ee-sign-taml	ee-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+ai-sign-taml	ai-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+o-sign-taml	o-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+oo-sign-taml	oo-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+au-sign-taml	au-sign-taml	skip	False	not a Sinhala (-sinh) glyph
+au-lengthmark-taml	au-lengthmark-taml	skip	False	not a Sinhala (-sinh) glyph
+dieresis	dieresis	skip	False	not a Sinhala (-sinh) glyph
+dotaccent	dotaccent	skip	False	not a Sinhala (-sinh) glyph
+grave	grave	skip	False	not a Sinhala (-sinh) glyph
+acute	acute	skip	False	not a Sinhala (-sinh) glyph
+hungarumlaut	hungarumlaut	skip	False	not a Sinhala (-sinh) glyph
+circumflex	circumflex	skip	False	not a Sinhala (-sinh) glyph
+uni02C9	uni02C9	skip	False	not a Sinhala (-sinh) glyph
+caron	caron	skip	False	not a Sinhala (-sinh) glyph
+breve	breve	skip	False	not a Sinhala (-sinh) glyph
+ring	ring	skip	False	not a Sinhala (-sinh) glyph
+tilde	tilde	skip	False	not a Sinhala (-sinh) glyph
+macron	macron	skip	False	not a Sinhala (-sinh) glyph
+cedilla	cedilla	skip	False	not a Sinhala (-sinh) glyph
+ogonek	ogonek	skip	False	not a Sinhala (-sinh) glyph
+repha-sign-sinh.001	repha-sinh.001	renamed	False	standalone sign (+ alternate suffix .001)
+repha-sign-sinh.002	repha-sinh.002	renamed	False	standalone sign (+ alternate suffix .002)
+repha-sign-sinh.003	repha-sinh.003	renamed	False	standalone sign (+ alternate suffix .003)
+repha-sign-sinh.004	repha-sinh.004	renamed	False	standalone sign (+ alternate suffix .004)
+repha-sign-sinh.005	repha-sinh.005	renamed	False	standalone sign (+ alternate suffix .005)
+repha-sign-sinh.006	repha-sinh.006	renamed	False	standalone sign (+ alternate suffix .006)
+repha-sign-sinh.007	repha-sinh.007	renamed	False	standalone sign (+ alternate suffix .007)
+repha-sign-sinh.008	repha-sinh.008	renamed	False	standalone sign (+ alternate suffix .008)
+repha-sign-sinh.009	repha-sinh.009	renamed	False	standalone sign (+ alternate suffix .009)
+repha-sign-sinh.010	repha-sinh.010	renamed	False	standalone sign (+ alternate suffix .010)
+commaaccent	commaaccent	skip	False	not a Sinhala (-sinh) glyph
+ca-i-taml	ca-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ca-ii-taml	ca-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ca-u-taml	ca-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ca-uu-taml	ca-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+czechcaron	czechcaron	skip	False	not a Sinhala (-sinh) glyph
+ha-i-taml	ha-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ha-ii-taml	ha-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ha-u-taml	ha-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ha-uu-taml	ha-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+ja-i-taml	ja-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ja-ii-taml	ja-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ja-u-taml	ja-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ja-uu-taml	ja-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+ka-i-taml	ka-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ka-ii-taml	ka-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ka-u-taml	ka-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ka-uu-taml	ka-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+kssa-i-taml	kssa-i-taml	skip	False	not a Sinhala (-sinh) glyph
+kssa-ii-taml	kssa-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+kssa-taml	kssa-taml	skip	False	not a Sinhala (-sinh) glyph
+kssa-u-taml	kssa-u-taml	skip	False	not a Sinhala (-sinh) glyph
+kssa-uu-taml	kssa-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+la-ai-taml	la-ai-taml	skip	False	not a Sinhala (-sinh) glyph
+la-i-taml	la-i-taml	skip	False	not a Sinhala (-sinh) glyph
+la-ii-taml	la-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+la-u-taml	la-u-taml	skip	False	not a Sinhala (-sinh) glyph
+la-uu-taml	la-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+lla-ai-taml	lla-ai-taml	skip	False	not a Sinhala (-sinh) glyph
+lla-i-taml	lla-i-taml	skip	False	not a Sinhala (-sinh) glyph
+lla-ii-taml	lla-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+lla-u-taml	lla-u-taml	skip	False	not a Sinhala (-sinh) glyph
+lla-uu-taml	lla-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+ma-i-taml	ma-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ma-ii-taml	ma-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ma-u-taml	ma-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ma-uu-taml	ma-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+mooniak	mooniak	skip	False	not a Sinhala (-sinh) glyph
+na-i-taml	na-i-taml	skip	False	not a Sinhala (-sinh) glyph
+na-ii-taml	na-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+na-u-taml	na-u-taml	skip	False	not a Sinhala (-sinh) glyph
+na-uu-taml	na-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+nga-i-taml	nga-i-taml	skip	False	not a Sinhala (-sinh) glyph
+nga-ii-taml	nga-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+nga-uu-taml	nga-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-aa-taml	nna-aa-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-ai-taml	nna-ai-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-i-taml	nna-i-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-ii-taml	nna-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-u-taml	nna-u-taml	skip	False	not a Sinhala (-sinh) glyph
+nna-uu-taml	nna-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-aa-taml	nna2-aa-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-ai-taml	nna2-ai-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-i-taml	nna2-i-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-ii-taml	nna2-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-u-taml	nna2-u-taml	skip	False	not a Sinhala (-sinh) glyph
+nna2-uu-taml	nna2-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+nya-i-taml	nya-i-taml	skip	False	not a Sinhala (-sinh) glyph
+nya-ii-taml	nya-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+nya-u-taml	nya-u-taml	skip	False	not a Sinhala (-sinh) glyph
+nya-uu-taml	nya-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+pa-i-taml	pa-i-taml	skip	False	not a Sinhala (-sinh) glyph
+pa-ii-taml	pa-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+pa-u-taml	pa-u-taml	skip	False	not a Sinhala (-sinh) glyph
+pa-uu-taml	pa-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+ra-i-taml	ra-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ra-ii-taml	ra-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ra-u-taml	ra-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ra-uu-taml	ra-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+rra-aa-taml	rra-aa-taml	skip	False	not a Sinhala (-sinh) glyph
+rra-i-taml	rra-i-taml	skip	False	not a Sinhala (-sinh) glyph
+rra-ii-taml	rra-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+rra-u-taml	rra-u-taml	skip	False	not a Sinhala (-sinh) glyph
+rra-uu-taml	rra-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+sa-i-taml	sa-i-taml	skip	False	not a Sinhala (-sinh) glyph
+sa-ii-taml	sa-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+sa-u-taml	sa-u-taml	skip	False	not a Sinhala (-sinh) glyph
+sha-i-taml	sha-i-taml	skip	False	not a Sinhala (-sinh) glyph
+sha-ii-taml	sha-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+shree-taml	shree-taml	skip	False	not a Sinhala (-sinh) glyph
+ssa-i-taml	ssa-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ssa-ii-taml	ssa-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ssa-u-taml	ssa-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ssa-uu-taml	ssa-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+ta-i-taml	ta-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ta-ii-taml	ta-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ta-u-taml	ta-u-taml	skip	False	not a Sinhala (-sinh) glyph
+ta-uu-taml	ta-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+tta-i-taml	tta-i-taml	skip	False	not a Sinhala (-sinh) glyph
+tta-ii-taml	tta-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+tta-u-taml	tta-u-taml	skip	False	not a Sinhala (-sinh) glyph
+tta-uu-taml	tta-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+va-i-taml	va-i-taml	skip	False	not a Sinhala (-sinh) glyph
+va-ii-taml	va-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+va-uu-taml	va-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+vertical_stem_upper	vertical_stem_upper	skip	False	not a Sinhala (-sinh) glyph
+ya-i-taml	ya-i-taml	skip	False	not a Sinhala (-sinh) glyph
+ya-ii-taml	ya-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+ya-uu-taml	ya-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+zha-i-taml	zha-i-taml	skip	False	not a Sinhala (-sinh) glyph
+zha-ii-taml	zha-ii-taml	skip	False	not a Sinhala (-sinh) glyph
+zha-u-taml	zha-u-taml	skip	False	not a Sinhala (-sinh) glyph
+zha-uu-taml	zha-uu-taml	skip	False	not a Sinhala (-sinh) glyph
+ai-sign-taml.alt	ai-sign-taml.alt	skip	False	not a Sinhala (-sinh) glyph
+fa-al-sinh.hist	f-sinh.hist	renamed	False	pure-consonant (virama) ligature (+ alternate suffix .hist)
+fa-i-sinh.hist	fI-sinh.hist	renamed	False	consonant+vowel-sign ligature (+ alternate suffix .hist)
+fa-ii-sinh.hist	fIi-sinh.hist	renamed	False	consonant+vowel-sign ligature (+ alternate suffix .hist)
+fa-rakar-al-sinh.hist	fR-sinh.hist	renamed	False	rakar ligature (+ alternate suffix .hist)
+fa-rakar-i-sinh.hist	fRI-sinh.hist	renamed	False	rakar ligature (+ alternate suffix .hist)
+fa-rakar-ii-sinh.hist	fRIi-sinh.hist	renamed	False	rakar ligature (+ alternate suffix .hist)
+fa-rakar-sinh.hist	fRa-sinh.hist	renamed	False	rakar ligature (+ alternate suffix .hist)
+fa-repha-sinh.hist	fa_repha-sinh.hist	renamed	False	repaya (repha) combination (+ alternate suffix .hist)
+fa-sinh.hist	fa-sinh.hist	unchanged	False	base consonant (+ alternate suffix .hist)
+fa-u-sinh.hist	fU-sinh.hist	renamed	False	consonant+vowel-sign ligature (+ alternate suffix .hist)
+fa-uu-sinh.hist	fUu-sinh.hist	renamed	False	consonant+vowel-sign ligature (+ alternate suffix .hist)
+i-sign.alt1-taml	i-sign.alt1-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign.alt2-taml	i-sign.alt2-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign.alt3-taml	i-sign.alt3-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign.alt4-taml	i-sign.alt4-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign.alt5-taml	i-sign.alt5-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign.alt6-taml	i-sign.alt6-taml	skip	False	not a Sinhala (-sinh) glyph
+i-sign.alt7-taml	i-sign.alt7-taml	skip	False	not a Sinhala (-sinh) glyph
+ii-sign.alt-taml	ii-sign.alt-taml	skip	False	not a Sinhala (-sinh) glyph
+ii-sign.alt1-taml	ii-sign.alt1-taml	skip	False	not a Sinhala (-sinh) glyph
+u-sign.alt1-taml	u-sign.alt1-taml	skip	False	not a Sinhala (-sinh) glyph
