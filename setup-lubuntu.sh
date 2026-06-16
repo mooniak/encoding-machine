@@ -4,9 +4,9 @@
 #
 # Installs a browser, disables screen blanking/power saving, and configures
 # the machine to boot straight into the Encoding Machine in fullscreen kiosk
-# mode. Assumes this repo lives at /encoding-machine.
+# mode. Assumes this repo lives at /home/mooniak/encoding-machine.
 #
-# Usage:   sudo bash /encoding-machine/setup-lubuntu.sh
+# Usage:   sudo bash /home/mooniak/encoding-machine/setup-lubuntu.sh
 # Re-run:  safe to run again; it overwrites its own config.
 #
 set -euo pipefail
@@ -14,7 +14,8 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-REPO_DIR="./encoding-machine"
+# Repo dir = the folder this script lives in (no hardcoded path to get wrong).
+REPO_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 INDEX_URL="file://${REPO_DIR}/index.html"
 
 # The user the kiosk autostarts for. Defaults to the user who invoked sudo,
