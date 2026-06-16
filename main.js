@@ -987,9 +987,15 @@
     let hbShape = null;
 
     try {
+        // Prefer the locally bundled copy (works fully offline); fall back to CDN.
+        let hb;
+        try {
+            hb = await import('./vendor/harfbuzzjs/index.mjs');
+        } catch (_local) {
+            hb = await import('https://cdn.jsdelivr.net/npm/harfbuzzjs@1.2.1/dist/index.mjs');
+        }
         const { Blob: HBBlob, Face: HBFace, Font: HBFont,
-                Buffer: _HBBuffer, shape: _hbShape } =
-            await import('https://cdn.jsdelivr.net/npm/harfbuzzjs@1.2.1/dist/index.mjs');
+                Buffer: _HBBuffer, shape: _hbShape } = hb;
         HBBuffer = _HBBuffer;
         hbShape  = _hbShape;
         hbFont = new HBFont(new HBFace(new HBBlob(b64ToBuffer(FONT_B64))));
