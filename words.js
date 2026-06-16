@@ -62,5 +62,4 @@ const DEMO_WORDS = [
     "ස්ත්‍රිය",        // S – woman          double-stop conjunct
     "பாரம்பரியம்",    // T – tradition      anusvara cluster
     "π≈3.14",          // N – pi approx      U+03C0 + U+2248
-    "A→B",             // P – arrow          U+2192
 ];
