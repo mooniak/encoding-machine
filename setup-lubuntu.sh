@@ -14,7 +14,7 @@ set -euo pipefail
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
-REPO_DIR="/encoding-machine"
+REPO_DIR="./encoding-machine"
 INDEX_URL="file://${REPO_DIR}/index.html"
 
 # The user the kiosk autostarts for. Defaults to the user who invoked sudo,
