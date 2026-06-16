@@ -49,10 +49,10 @@ fi
 if command -v ibus >/dev/null 2>&1; then
   AVAIL="$(ibus list-engine 2>/dev/null || true)"
   for e in "$ENGINE_SI" "$ENGINE_TA"; do
-    if ! grep -q "$e" <<<"$AVAIL"; then
+    if ! printf '%s\n' "$AVAIL" | grep -q "$e"; then
       echo "    WARNING: engine '$e' not found in 'ibus list-engine'."
       echo "    Available Sinhala/Tamil engines:"
-      grep -iE 'm17n:(si|ta):' <<<"$AVAIL" | sed 's/^/      /' || echo "      (none)"
+      printf '%s\n' "$AVAIL" | grep -iE 'm17n:(si|ta):' | sed 's/^/      /' || echo "      (none)"
       echo "    Re-run with the correct id, e.g.: sudo ENGINE_SI=m17n:si:phonetic bash setup-keyboards.sh"
     fi
   done
