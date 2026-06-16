@@ -174,9 +174,9 @@ fi
 # ---------------------------------------------------------------------------
 echo "==> Installing Sinhala & Tamil input methods and fonts..."
 apt-get install -y \
-  ibus ibus-m17n m17n-db \
+  ibus ibus-m17n m17n-db xbindkeys \
   fonts-lklug-sinhala fonts-noto-core fonts-sinhala fonts-tamil \
-  || apt-get install -y ibus ibus-m17n m17n-db fonts-lklug-sinhala || true
+  || apt-get install -y ibus ibus-m17n m17n-db xbindkeys fonts-lklug-sinhala || true
 
 # Make IBUS the system input-method framework for all GUI sessions.
 if command -v im-config >/dev/null 2>&1; then
@@ -196,6 +196,32 @@ EOF
 # These are the standard m17n engines: m17n:si:wijesekera, m17n:ta:tamil99.
 sudo -u "$KIOSK_USER" dbus-launch gsettings set org.freedesktop.ibus.general preload-engines \
   "['xkb:us::eng', 'm17n:si:wijesekera', 'm17n:ta:tamil99']" 2>/dev/null || true
+
+# Bind Ctrl+1 / Ctrl+2 / Ctrl+3 to switch engine directly (via xbindkeys).
+#   Ctrl+1 -> English (US)   Ctrl+2 -> Sinhala   Ctrl+3 -> Tamil
+XBK="${KIOSK_HOME}/.xbindkeysrc"
+echo "==> Writing $XBK (Ctrl+1/2/3 layout switch)"
+cat > "$XBK" <<'EOF'
+# Encoding Machine — keyboard switching
+"ibus engine xkb:us::eng"
+  control + 1
+
+"ibus engine m17n:si:wijesekera"
+  control + 2
+
+"ibus engine m17n:ta:tamil99"
+  control + 3
+EOF
+chown "$KIOSK_USER":"$KIOSK_USER" "$XBK" 2>/dev/null || true
+
+# Autostart xbindkeys in the kiosk session.
+cat > "${AUTOSTART_DIR}/xbindkeys.desktop" <<EOF
+[Desktop Entry]
+Type=Application
+Name=xbindkeys (keyboard switch)
+Exec=xbindkeys
+Terminal=false
+EOF
 
 # Export IM environment variables for the kiosk user (covers GTK/Qt/Chrome).
 PROFILE_D="${KIOSK_HOME}/.profile"
@@ -219,6 +245,6 @@ echo "  Reboot to launch the kiosk:   sudo reboot"
 echo "  Test without reboot:          ${LAUNCH_SCRIPT}"
 echo "  Exit kiosk:                   Ctrl+Alt+F2 / Alt+F4"
 echo
-echo "  Switch keyboard layout:       Super+Space  (US / Sinhala / Tamil)"
-echo "  Sinhala engine: wijesekera    Tamil engine: tamil99"
+echo "  Switch keyboard:  Ctrl+1 English   Ctrl+2 Sinhala   Ctrl+3 Tamil"
+echo "  (Super+Space also cycles layouts.)"
 echo "============================================================"
