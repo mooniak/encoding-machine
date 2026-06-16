@@ -214,9 +214,9 @@ Terminal=false
 EOF
 
 # Preload the layouts: US English + Sinhala (wijesekara) + Tamil (tamil99).
-# These are the standard m17n engines: m17n:si:wijesekera, m17n:ta:tamil99.
+# These are the standard m17n engines: m17n:si:wijesekara, m17n:ta:tamil99.
 sudo -u "$KIOSK_USER" dbus-launch gsettings set org.freedesktop.ibus.general preload-engines \
-  "['xkb:us::eng', 'm17n:si:wijesekera', 'm17n:ta:tamil99']" 2>/dev/null || true
+  "['xkb:us::eng', 'm17n:si:wijesekara', 'm17n:ta:tamil99']" 2>/dev/null || true
 
 # Bind Ctrl+1 / Ctrl+2 / Ctrl+3 to switch engine directly (via xbindkeys).
 #   Ctrl+1 -> English (US)   Ctrl+2 -> Sinhala   Ctrl+3 -> Tamil
@@ -227,7 +227,7 @@ cat > "$XBK" <<'EOF'
 "ibus engine xkb:us::eng"
   control + 1
 
-"ibus engine m17n:si:wijesekera"
+"ibus engine m17n:si:wijesekara"
   control + 2
 
 "ibus engine m17n:ta:tamil99"
