@@ -72,6 +72,26 @@ apt-get install -y git unclutter x11-xserver-utils xdotool || true
 
 echo "==> Browser: $BROWSER_BIN"
 
+# Ensure opentype.min.js is present (index.html needs it; not committed to repo).
+# Falls back to CDN at runtime, but bundling it keeps the kiosk working offline.
+OTJS="${REPO_DIR}/opentype.min.js"
+if [[ ! -s "$OTJS" ]]; then
+  echo "==> opentype.min.js missing; downloading..."
+  if command -v curl >/dev/null 2>&1; then
+    curl -fsSL -o "$OTJS" "https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js" \
+      || curl -fsSL -o "$OTJS" "https://unpkg.com/opentype.js@1.3.4/dist/opentype.min.js" || true
+  fi
+  if [[ ! -s "$OTJS" ]] && command -v wget >/dev/null 2>&1; then
+    wget -qO "$OTJS" "https://cdn.jsdelivr.net/npm/opentype.js@1.3.4/dist/opentype.min.js" || true
+  fi
+  if [[ -s "$OTJS" ]]; then
+    chown "$KIOSK_USER":"$KIOSK_USER" "$OTJS" 2>/dev/null || true
+    echo "    saved $(wc -c < "$OTJS") bytes"
+  else
+    echo "    WARNING: download failed; index.html will load opentype.js from CDN at runtime (needs network)."
+  fi
+fi
+
 # ---------------------------------------------------------------------------
 # 2. Kiosk launch script
 # ---------------------------------------------------------------------------
