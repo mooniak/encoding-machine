@@ -238,4 +238,96 @@
         #demo-hud:hover { opacity: 1; }
         #demo-status { font-size: 0.75rem; color: var(--accent); }
         #demo-keys   { font-size: 0.42rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; }
-    
+
+        /* ═══ PRINT BUTTON (screen only) ═══ */
+        #print-btn {
+            position: fixed;
+            bottom: 14px;
+            left: 18px;
+            z-index: 120;
+            font-family: inherit;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #000;
+            background: var(--accent, #00ff41);
+            border: none;
+            border-radius: 6px;
+            padding: 10px 16px;
+            cursor: pointer;
+            opacity: 0.85;
+        }
+        #print-btn:hover  { opacity: 1; }
+        #print-btn:active { transform: translateY(1px); }
+
+        /* Receipt is invisible on screen; shown only in the print view */
+        #print-receipt { display: none; }
+
+        /* ═══ 80mm THERMAL RECEIPT ═══ */
+        @media print {
+            @page { size: 80mm auto; margin: 0; }
+
+            html, body { background: #fff !important; margin: 0; padding: 0; }
+
+            /* Hide the live app; show only the receipt */
+            body > *:not(#print-receipt) { display: none !important; }
+
+            #print-receipt {
+                display: block;
+                width: 72mm;
+                margin: 0 auto;
+                padding: 4mm 0 8mm;
+                color: #000;
+                background: #fff;
+                font-family: "Courier New", monospace;
+                text-align: center;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            #print-receipt .r-head {
+                font-size: 14pt; font-weight: 700; letter-spacing: 2px;
+            }
+            #print-receipt .r-sub {
+                font-family: "Abhaya Libre", "Noto Sans Sinhala", "Noto Sans Tamil", serif;
+                font-size: 8pt; letter-spacing: 0.5px;
+                margin-top: 1mm; line-height: 1.3;
+            }
+            #print-receipt .r-rule {
+                border-top: 1px dashed #000; margin: 3mm 0;
+            }
+            #print-receipt .r-string {
+                font-family: "Abhaya Libre", "Noto Sans Sinhala", "Noto Sans Tamil", serif;
+                font-size: 30pt; line-height: 1.1; margin: 2mm 0; word-break: break-word;
+            }
+            #print-receipt .r-label {
+                font-size: 7pt; font-weight: 700; letter-spacing: 2px;
+                text-transform: uppercase; margin: 2mm 0 1mm;
+            }
+            #print-receipt .r-glyphseq {
+                font-size: 8pt; line-height: 1.5; padding: 0 4mm;
+                word-break: break-word;
+            }
+            /* One codepoint block, stacked vertically down the strip */
+            #print-receipt .r-cp {
+                display: flex; align-items: center; gap: 3mm;
+                text-align: left; padding: 1.5mm 4mm;
+                border-bottom: 1px dotted #999;
+            }
+            #print-receipt .r-cp-char {
+                font-family: "Abhaya Libre", serif;
+                font-size: 20pt; min-width: 10mm; text-align: center;
+            }
+            #print-receipt .r-cp-data { font-size: 7.5pt; line-height: 1.35; }
+            #print-receipt .r-hex  { font-weight: 700; }
+            #print-receipt .r-bin  { letter-spacing: 0.5px; }
+            #print-receipt .r-name { font-size: 6.5pt; }
+            #print-receipt .r-foot {
+                margin-top: 4mm; text-align: center;
+            }
+            #print-receipt .r-logo {
+                width: 28mm; height: auto; display: block; margin: 0 auto 2mm;
+                filter: brightness(0);
+            }
+            #print-receipt .r-stamp {
+                font-size: 6.5pt; letter-spacing: 1px;
+            }
+        }

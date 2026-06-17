@@ -15,6 +15,9 @@
     }
     const font = opentype.parse(b64ToBuffer(FONT_B64));
 
+    // Unicode name lookup (populated by renderAll; shared with the print layout)
+    let UNICODE_NAMES = {};
+
     // ── Fullscreen ────────────────────────────────────────────
     function enterFS() {
         const el = document.documentElement;
@@ -116,7 +119,7 @@
         const charColour = new Array(chars.length).fill("#2a2a2a");
         map.forEach((src, ci) => src.forEach(charIdx => { charColour[charIdx] = PAL[ci % PAL.length]; }));
 
-        const UNICODE_NAMES = {
+        UNICODE_NAMES = {
   32:'SPACE',
   33:'EXCLAMATION MARK',
   34:'QUOTATION MARK',
@@ -932,6 +935,102 @@
         glyphsRow.innerHTML = "";
         connSVG.innerHTML = "";
     }
+
+    // ── Thermal receipt printing (80 mm strip) ────────────────
+    const receiptEl = document.getElementById("print-receipt");
+    const printBtn  = document.getElementById("print-btn");
+
+    const escHTML = s => s.replace(/[&<>"]/g, c =>
+        ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+    function cpName(cp) {
+        return UNICODE_NAMES[cp] || ("U+" + cp.toString(16).toUpperCase().padStart(4,"0"));
+    }
+
+    function buildReceipt() {
+        const text = input.value.trim();
+        if (!text) return false;
+        const chars = Array.from(text);
+
+        // Sequence of OpenType glyph names for the shaped text.
+        function glyphNameSequence(str) {
+            const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
+            let clusters = [...seg.segment(str)].map(s => s.segment);
+            clusters = mergeSpecialClusters(clusters);
+            const names = [];
+            clusters.forEach(cl => {
+                shapeCluster(cl).forEach(sg => {
+                    if (sg.glyphId === 0) {
+                        names.push("U+" + cl.codePointAt(0).toString(16).toUpperCase().padStart(4,"0"));
+                        return;
+                    }
+                    const g = font.glyphs.get(sg.glyphId);
+                    const n = g?.name;
+                    if (n && n !== ".notdef") { names.push(n); return; }
+                    const u = g?.unicode;
+                    names.push(u ? (UNICODE_NAMES[u] || ("U+" + u.toString(16).toUpperCase().padStart(4,"0")))
+                                 : ("GID" + sg.glyphId));
+                });
+            });
+            return names;
+        }
+        const glyphNames = glyphNameSequence(text);
+
+        // One block per codepoint: glyph, U+hex, binary, Unicode name.
+        const rows = chars.map(c => {
+            const cp  = c.codePointAt(0);
+            const hex = "U+" + cp.toString(16).toUpperCase().padStart(4,"0");
+            const bin = cp.toString(2).padStart(16,"0").match(/.{4}/g).join(" ");
+            return (
+                `<div class="r-cp">` +
+                    `<div class="r-cp-char">${escHTML(c)}</div>` +
+                    `<div class="r-cp-data">` +
+                        `<div class="r-hex">${hex}</div>` +
+                        `<div class="r-bin">${bin}</div>` +
+                        `<div class="r-name">${escHTML(cpName(cp))}</div>` +
+                    `</div>` +
+                `</div>`
+            );
+        }).join("");
+
+        const stamp = new Date().toLocaleString();
+
+        const glyphSeq = glyphNames.map(n => escHTML(n)).join("  ›  ");
+
+        receiptEl.innerHTML =
+            `<div class="r-head">AKURUGRAPHY</div>` +
+            `<div class="r-sub">how machines see language</div>` +
+            `<div class="r-sub">පරිගණකය බස දකින හැටි</div>` +
+            `<div class="r-sub">கணினிக்கு எழுத்துக்கள் புலப்படும் விதம்</div>` +
+            `<div class="r-rule"></div>` +
+            `<div class="r-string">${escHTML(text)}</div>` +
+            `<div class="r-label">GLYPH NAMES</div>` +
+            `<div class="r-glyphseq">${glyphSeq}</div>` +
+            `<div class="r-rule"></div>` +
+            `<div class="r-label">UNICODE · ${chars.length} codepoint${chars.length>1?"s":""}</div>` +
+            rows +
+            `<div class="r-rule"></div>` +
+            `<div class="r-foot">` +
+                `<img class="r-logo" src="mooniak-logo.svg" alt="mooniak">` +
+                `<div class="r-stamp">${escHTML(stamp)}</div>` +
+            `</div>`;
+        return true;
+    }
+
+    function printReceipt() {
+        if (!buildReceipt()) return;
+        window.print();
+        setTimeout(() => input.focus(), 100);
+    }
+
+    if (printBtn) printBtn.addEventListener("click", printReceipt);
+    // Ctrl+P / Cmd+P → our receipt instead of the browser's full-page print.
+    document.addEventListener("keydown", e => {
+        if ((e.ctrlKey || e.metaKey) && (e.key === "p" || e.key === "P")) {
+            e.preventDefault();
+            printReceipt();
+        }
+    });
 
     // ── Global demo keyboard controls ─────────────────────────
     document.addEventListener("keydown", e => {
