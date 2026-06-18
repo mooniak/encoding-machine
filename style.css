@@ -307,7 +307,8 @@
         #print-receipt .r-more   { font-size: 7pt; font-weight: 700; margin-top: 1mm; }
 
         @media print {
-            @page { size: 80mm auto; margin: 0; }
+            /* margin:0 removes Chrome's header/footer band; exact size is set by JS */
+            @page { margin: 0; }
 
             html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; height: auto !important; }
 
