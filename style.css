@@ -239,26 +239,6 @@
         #demo-status { font-size: 0.75rem; color: var(--accent); }
         #demo-keys   { font-size: 0.42rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; }
 
-        /* ═══ PRINT BUTTON (screen only) ═══ */
-        #print-btn {
-            position: fixed;
-            bottom: 14px;
-            left: 18px;
-            z-index: 120;
-            font-family: inherit;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            color: #000;
-            background: var(--accent, #00ff41);
-            border: none;
-            border-radius: 6px;
-            padding: 10px 16px;
-            cursor: pointer;
-            opacity: 0.85;
-        }
-        #print-btn:hover  { opacity: 1; }
-        #print-btn:active { transform: translateY(1px); }
-
         /* Receipt is invisible on screen; shown only in the print view */
         #print-receipt { display: none; }
 

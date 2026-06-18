@@ -138,6 +138,7 @@ sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/'   "\$PROFILE/Default/Pref
 
 exec ${BROWSER_BIN} \\
   --kiosk \\
+  --kiosk-printing \\
   --start-fullscreen \\
   --user-data-dir="\$PROFILE" \\
   --no-first-run \\

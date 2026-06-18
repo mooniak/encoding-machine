@@ -938,7 +938,6 @@
 
     // ── Thermal receipt printing (80 mm strip) ────────────────
     const receiptEl = document.getElementById("print-receipt");
-    const printBtn  = document.getElementById("print-btn");
 
     const escHTML = s => s.replace(/[&<>"]/g, c =>
         ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
@@ -1023,7 +1022,10 @@
         setTimeout(() => input.focus(), 100);
     }
 
-    if (printBtn) printBtn.addEventListener("click", printReceipt);
+    // Enter (in the text field) prints the current word directly.
+    input.addEventListener("keydown", e => {
+        if (e.key === "Enter") { e.preventDefault(); printReceipt(); }
+    });
     // Ctrl+P / Cmd+P → our receipt instead of the browser's full-page print.
     document.addEventListener("keydown", e => {
         if ((e.ctrlKey || e.metaKey) && (e.key === "p" || e.key === "P")) {
