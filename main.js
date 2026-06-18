@@ -1041,12 +1041,54 @@
             });
         }));
 
-        // Measure the real rendered height and pin the page to it (+1mm safety).
-        const heightMM = Math.ceil(receiptEl.getBoundingClientRect().height / PX_PER_MM) + 1;
-        pageStyleEl.textContent =
-            `@media print { @page { size: 80mm ${heightMM}mm; margin: 0; } }`;
+        let printed = false;
+        if (typeof html2canvas === "function") {
+            try {
+                // Pre-render SVG <img> tags to PNG at their CSS layout size.
+                // html2canvas draws SVGs at intrinsic SVG dimensions, not CSS dimensions,
+                // causing scaling / cropping. Converting to PNG first avoids this.
+                for (const imgEl of receiptEl.querySelectorAll("img")) {
+                    if (!imgEl.complete || !imgEl.naturalWidth) continue;
+                    const w = imgEl.offsetWidth, h = imgEl.offsetHeight;
+                    if (!w || !h) continue;
+                    const cv = document.createElement("canvas");
+                    cv.width = w; cv.height = h;
+                    const ctx = cv.getContext("2d");
+                    ctx.fillStyle = "#fff";
+                    ctx.fillRect(0, 0, w, h);
+                    const filter = getComputedStyle(imgEl).filter;
+                    if (filter && filter !== "none") ctx.filter = filter;
+                    ctx.drawImage(imgEl, 0, 0, w, h);
+                    imgEl.src = cv.toDataURL("image/png");
+                }
+                // Brief tick so img elements update to their new data-URL src.
+                await new Promise(r => setTimeout(r, 50));
 
-        window.print();
+                const receiptW = receiptEl.offsetWidth || 302;
+                const canvas = await html2canvas(receiptEl, {
+                    backgroundColor: "#fff",
+                    scale: 576 / receiptW,
+                    logging: false,
+                    useCORS: true
+                });
+                const png = canvas.toDataURL("image/png");
+                const resp = await fetch("http://127.0.0.1:9099/print", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ png })
+                });
+                printed = resp.ok;
+            } catch (e) {
+                console.warn("ESC/POS print failed:", e);
+            }
+        }
+        if (!printed) {
+            const heightMM = Math.ceil(receiptEl.getBoundingClientRect().height / PX_PER_MM) + 1;
+            pageStyleEl.textContent =
+                `@media print { @page { size: 80mm ${heightMM}mm; margin: 0; } }`;
+            await new Promise(r => setTimeout(r, 0));
+            window.print();
+        }
         setTimeout(() => input.focus(), 100);
     }
 
