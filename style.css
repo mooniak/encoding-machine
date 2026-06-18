@@ -21,7 +21,7 @@
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', 'Courier New', monospace;
+            font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', 'IBM Plex Mono', 'Courier New', monospace;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -56,7 +56,7 @@
             padding: 6px 14px;
             outline: none;
             width: min(1000px, 60vw);
-            font-family: "Abhaya Libre", "Courier New", monospace;
+            font-family: "Abhaya Libre", 'IBM Plex Mono', "Courier New", monospace;
         }
         #unicode-seq {
             font-size: 0.0rem;
@@ -113,7 +113,7 @@
             overflow: hidden;
         }
         .cp-char {
-            font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', sans-serif;
+            font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', 'IBM Plex Mono', sans-serif;
             font-size: clamp(1rem, 2.5vw, 2.2rem);
             line-height: 1;
             color: #fff;
@@ -203,7 +203,7 @@
         .glyph-name { font-size: 0.75rem; color: var(--accent); font-weight: bold; letter-spacing: 1px; word-break: break-all; }
         .glyph-sub  { font-size: 0.65rem; color: var(--dim); line-height: 1.4; }
         .bezier-data {
-            font-family: "Courier New", monospace;
+            font-family: 'IBM Plex Mono', "Courier New", monospace;
             font-size: clamp(.5rem, 0.5vw, 0.52rem);
             color: #00ffa1;
             background: #050505;
@@ -221,6 +221,11 @@
             font-family: "Abhaya Libre";
             src: url("AbhayaLibreNIGHTLYVF.ttf") format("truetype");
             font-weight: 100 900;
+        }
+        @font-face {
+            font-family: "Noto Sans Sinhala Print";
+            src: url("NotoSansSinhala-SemiBold.ttf") format("truetype");
+            font-weight: 600;
         }
 
         /* ═══ DEMO HUD ═══ */
@@ -249,10 +254,10 @@
             box-sizing: border-box;
             width: 80mm;
             margin: 0;
-            padding: 0 4mm 1mm;
+            padding: 4mm 4mm 1mm;
             color: #000;
             background: #fff;
-            font-family: "Courier New", monospace;
+            font-family: 'Space Mono', "Courier New", monospace;
             text-align: left;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
@@ -289,7 +294,7 @@
         }
         #print-receipt .r-cp:last-of-type { border-bottom: none; }
         #print-receipt .r-cp-char {
-            font-family: "Abhaya Libre", serif;
+            font-family: "Noto Sans Sinhala Print", "Abhaya Libre", serif;
             font-size: 20pt; min-width: 10mm; text-align: center;
         }
         #print-receipt .r-cp-data { font-size: 7.5pt; line-height: 1.35; }

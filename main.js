@@ -992,8 +992,11 @@
             );
         }).join("");
 
-        const dateStr = new Date().toLocaleDateString(undefined,
+        const now = new Date();
+        const dateStr = now.toLocaleDateString(undefined,
             { year: "numeric", month: "long", day: "numeric" });
+        const timeStr = now.toLocaleTimeString(undefined,
+            { hour: "2-digit", minute: "2-digit" });
 
         const glyphSeq = glyphNames.map(n => escHTML(n)).join("  ›  ");
 
@@ -1004,7 +1007,7 @@
             `<div class="r-sub">கணினிக்கு எழுத்துக்கள் புலப்படும் விதம்</div>` +
             `<div class="r-rule"></div>` +
             `<div class="r-string">${escHTML(text)}</div>` +
-            `<div class="r-label">GLYPH NAMES</div>` +
+            `<div class="r-label">FONT SPECIFIC DATA: GLYPH NAMES</div>` +
             `<div class="r-glyphseq">${glyphSeq}</div>` +
             `<div class="r-rule"></div>` +
             `<div class="r-label">UNICODE · ${chars.length} codepoint${chars.length>1?"s":""}</div>` +
@@ -1012,8 +1015,9 @@
             `<div class="r-rule"></div>` +
             `<div class="r-foot">` +
                 `<img class="r-logo" src="mooniak-logo-print.svg" alt="mooniak">` +
-                `<div class="r-issued">Issued at the Akurugraphy exhibition on ${escHTML(dateStr)}</div>` +
-                `<div class="r-more">mooniak.com for more</div>` +
+                `<div class="r-issued">Issued at the Akurugraphy exhibition on ${escHTML(dateStr)} at ${escHTML(timeStr)}</div>` +
+                `<div class="r-issued">geoffreybawa.com/akurugraphy</div>` +
+                `<div class="r-more">visit mooniak.com to learn more about encoding</div>` +
             `</div>`;
         return true;
     }
