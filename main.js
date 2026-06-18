@@ -1039,6 +1039,7 @@
     });
     // F12, or Ctrl+P / Cmd+P → print our receipt (no browser dialog in kiosk).
     document.addEventListener("keydown", e => {
+        if (e.key === "F5") { e.preventDefault(); location.reload(); return; }
         if (e.key === "F12") { e.preventDefault(); printReceipt(); return; }
         if ((e.ctrlKey || e.metaKey) && (e.key === "p" || e.key === "P")) {
             e.preventDefault();
