@@ -1011,7 +1011,7 @@
             rows +
             `<div class="r-rule"></div>` +
             `<div class="r-foot">` +
-                `<img class="r-logo" src="mooniak-logo.svg" alt="mooniak">` +
+                `<img class="r-logo" src="mooniak-logo-print.svg" alt="mooniak">` +
                 `<div class="r-stamp">${escHTML(stamp)}</div>` +
             `</div>`;
         return true;

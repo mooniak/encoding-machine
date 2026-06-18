@@ -324,7 +324,7 @@
                 margin-top: 4mm; text-align: center;
             }
             #print-receipt .r-logo {
-                width: 28mm; height: auto; display: block; margin: 0 auto 2mm;
+                width: 44mm; height: auto; display: block; margin: 0 auto 2mm;
                 filter: brightness(0);
             }
             #print-receipt .r-stamp {
