@@ -992,12 +992,13 @@
             );
         }).join("");
 
-        const stamp = new Date().toLocaleString();
+        const dateStr = new Date().toLocaleDateString(undefined,
+            { year: "numeric", month: "long", day: "numeric" });
 
         const glyphSeq = glyphNames.map(n => escHTML(n)).join("  ›  ");
 
         receiptEl.innerHTML =
-            `<div class="r-head">AKURUGRAPHY</div>` +
+            `<img class="r-top-logo" src="Akurugraphy_logo.svg" alt="Akurugraphy">` +
             `<div class="r-sub">how machines see language</div>` +
             `<div class="r-sub">පරිගණකය බස දකින හැටි</div>` +
             `<div class="r-sub">கணினிக்கு எழுத்துக்கள் புலப்படும் விதம்</div>` +
@@ -1011,7 +1012,8 @@
             `<div class="r-rule"></div>` +
             `<div class="r-foot">` +
                 `<img class="r-logo" src="mooniak-logo-print.svg" alt="mooniak">` +
-                `<div class="r-stamp">${escHTML(stamp)}</div>` +
+                `<div class="r-issued">Issued at the Akurugraphy exhibition on ${escHTML(dateStr)}</div>` +
+                `<div class="r-more">mooniak.com for more</div>` +
             `</div>`;
         return true;
     }
