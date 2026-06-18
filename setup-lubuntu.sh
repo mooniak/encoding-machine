@@ -136,7 +136,13 @@ mkdir -p "\$PROFILE/Default"
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' "\$PROFILE/Default/Preferences" 2>/dev/null || true
 sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/'   "\$PROFILE/Default/Preferences" 2>/dev/null || true
 
+# Wipe Chrome's cache so updated files (after git pull) always load fresh.
+rm -rf "\$PROFILE/Default/Cache" "\$PROFILE/Default/Code Cache" \\
+       "\$PROFILE/Default/GPUCache" "\$PROFILE/ShaderCache" 2>/dev/null || true
+
 exec ${BROWSER_BIN} \\
+  --disk-cache-size=1 \\
+  --aggressive-cache-discard \\
   --kiosk \\
   --kiosk-printing \\
   --start-fullscreen \\

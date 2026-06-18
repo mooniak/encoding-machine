@@ -1028,8 +1028,9 @@
     input.addEventListener("keydown", e => {
         if (e.key === "Enter") { e.preventDefault(); printReceipt(); }
     });
-    // Ctrl+P / Cmd+P → our receipt instead of the browser's full-page print.
+    // F12, or Ctrl+P / Cmd+P → print our receipt (no browser dialog in kiosk).
     document.addEventListener("keydown", e => {
+        if (e.key === "F12") { e.preventDefault(); printReceipt(); return; }
         if ((e.ctrlKey || e.metaKey) && (e.key === "p" || e.key === "P")) {
             e.preventDefault();
             printReceipt();
