@@ -1018,8 +1018,17 @@
         return true;
     }
 
-    function printReceipt() {
+    async function printReceipt() {
         if (!buildReceipt()) return;
+        // Wait for the logo SVGs to load/decode, else they print blank.
+        const imgs = [...receiptEl.querySelectorAll("img")];
+        await Promise.all(imgs.map(img => {
+            if (img.complete && img.naturalWidth) return Promise.resolve();
+            return new Promise(res => {
+                img.onload = img.onerror = res;
+                setTimeout(res, 1500);   // safety timeout
+            });
+        }));
         window.print();
         setTimeout(() => input.focus(), 100);
     }
