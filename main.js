@@ -998,7 +998,7 @@
         const glyphSeq = glyphNames.map(n => escHTML(n)).join("  ›  ");
 
         receiptEl.innerHTML =
-            `<img class="r-top-logo" src="Akurugraphy_logo.svg" alt="Akurugraphy">` +
+            `<img class="r-top-logo" src="Akurugraphy_logo-print.svg" alt="Akurugraphy">` +
             `<div class="r-sub">how machines see language</div>` +
             `<div class="r-sub">පරිගණකය බස දකින හැටි</div>` +
             `<div class="r-sub">கணினிக்கு எழுத்துக்கள் புலப்படும் விதம்</div>` +
