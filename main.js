@@ -1018,9 +1018,20 @@
         return true;
     }
 
+    // Dynamic @page rule so the printed page height == the receipt height
+    // (avoids the trailing blank that "size: 80mm auto" produces on thermal printers).
+    let pageStyleEl = document.getElementById("dyn-page-size");
+    if (!pageStyleEl) {
+        pageStyleEl = document.createElement("style");
+        pageStyleEl.id = "dyn-page-size";
+        document.head.appendChild(pageStyleEl);
+    }
+    const PX_PER_MM = 96 / 25.4;   // CSS reference pixels per millimetre
+
     async function printReceipt() {
         if (!buildReceipt()) return;
-        // Wait for the logo SVGs to load/decode, else they print blank.
+        // Wait for the logo SVGs to load/decode, else they print blank
+        // and their height isn't counted in the measurement.
         const imgs = [...receiptEl.querySelectorAll("img")];
         await Promise.all(imgs.map(img => {
             if (img.complete && img.naturalWidth) return Promise.resolve();
@@ -1029,6 +1040,12 @@
                 setTimeout(res, 1500);   // safety timeout
             });
         }));
+
+        // Measure the real rendered height and pin the page to it (+1mm safety).
+        const heightMM = Math.ceil(receiptEl.getBoundingClientRect().height / PX_PER_MM) + 1;
+        pageStyleEl.textContent =
+            `@media print { @page { size: 80mm ${heightMM}mm; margin: 0; } }`;
+
         window.print();
         setTimeout(() => input.focus(), 100);
     }
