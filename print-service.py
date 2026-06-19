@@ -5,7 +5,7 @@ from PIL import Image
 from escpos.printer import File
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
-PRINTER_DEV = "/dev/usb/lp0"
+PRINTER_DEV = "/dev/usb/lp1"
 PRINT_WIDTH = 576  # 72 mm @ 203 dpi
 
 mimetypes.add_type("text/javascript", ".mjs")
