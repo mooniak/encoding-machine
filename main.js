@@ -118,7 +118,23 @@
                 const seg = text.slice(cuts[k], cuts[k + 1] ?? text.length);
                 if (seg) out.push(seg);
             }
-            if (out.join("") === text) return out;
+            // A cluster that fused a base consonant with a ZWJ conjunct into one
+            // ligature glyph (e.g. ත්‍ර, ක්‍ර, ශ්‍ර) keeps its trailing dependent
+            // vowel sign on the same card, so ත්‍රී / ක්‍රි read as one unit. Unlike
+            // ya-prasaya (ව්‍ය), where the base stays a separate glyph, here the
+            // conjunct cluster starts with the base consonant itself.
+            const FUSED_CONJUNCT = /[ක-ෆ]්‍[ක-ෆ]/;
+            const VOWEL_SIGN_ONLY = /^[ා-ෟෲෳ]+$/;
+            const merged = [];
+            for (const seg of out) {
+                if (merged.length && VOWEL_SIGN_ONLY.test(seg) &&
+                    FUSED_CONJUNCT.test(merged[merged.length - 1])) {
+                    merged[merged.length - 1] += seg;
+                } else {
+                    merged.push(seg);
+                }
+            }
+            if (merged.join("") === text) return merged;
         }
         const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
         return mergeSpecialClusters([...seg.segment(text)].map(s => s.segment));

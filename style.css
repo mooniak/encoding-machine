@@ -40,12 +40,12 @@
             align-items: center;
             gap: 40px;
             padding: 14px 40px;
-            background: var(--panel);
+            background: #8e0000;
             border-top: 1px solid var(--border);
         }
         .input-col { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
         .input-label {
-            font-size: 1rem; color: var(--accent);
+            font-size: 0.6rem; color: var(--accent);
             text-transform: uppercase;
         }
         #textInput {
@@ -70,7 +70,7 @@
         .intro-col { flex: 1; text-align: right; }
         .intro-title {
             display: block;
-            font-size: 1rem; font-weight: bold;
+            font-size: 0.6rem; font-weight: bold;
             color: var(--accent);
             margin-bottom: 6px;
         }
