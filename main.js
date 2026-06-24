@@ -95,6 +95,35 @@
         return final;
     }
 
+    // ── Split text into shaped-glyph clusters ─────────────────
+    // Each cluster = one visual unit produced by the shaper. We ask HarfBuzz
+    // (cluster level 1 = MONOTONE_CHARACTERS) where the glyph boundaries fall, so
+    // e.g. ව්‍යා → ["ව", "්‍ය", "ා"] (base, ya-prasaya, aa-sign) instead of one
+    // merged card. Falls back to grapheme segmentation + ZWJ-conjunct merge when
+    // HarfBuzz is unavailable (opentype.js fallback path).
+    function shapedClusters(text) {
+        if (hbFont && HBBuffer && hbShape) {
+            const buf = new HBBuffer();
+            buf.addText(text);
+            buf.guessSegmentProperties();
+            buf.setClusterLevel(1);
+            hbShape(hbFont, buf);
+            const infos = buf.getGlyphInfos();
+            // Cluster values are UTF-16 offsets into `text`; distinct values are the
+            // cut points. Always anchor at 0 so the slices cover the whole string.
+            const cuts = [...new Set(infos.map(i => i.cluster))].sort((a, b) => a - b);
+            if (cuts[0] !== 0) cuts.unshift(0);
+            const out = [];
+            for (let k = 0; k < cuts.length; k++) {
+                const seg = text.slice(cuts[k], cuts[k + 1] ?? text.length);
+                if (seg) out.push(seg);
+            }
+            if (out.join("") === text) return out;
+        }
+        const seg = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
+        return mergeSpecialClusters([...seg.segment(text)].map(s => s.segment));
+    }
+
     // ── Render all three areas ─────────────────────────────────
     function renderAll() {
         cpRow.innerHTML = "";
@@ -105,10 +134,8 @@
 
         const chars = Array.from(text);
 
-        // Split into grapheme clusters — each cluster = one shaped visual unit
-        const segmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
-        let clusters = [...segmenter.segment(text)].map(s => s.segment);
-        clusters = mergeSpecialClusters(clusters);
+        // Split into shaped-glyph clusters — each cluster = one shaped visual unit
+        const clusters = shapedClusters(text);
 
         // Build map: clusterIdx → [charIdx, ...] covering all codepoints in the cluster
         const map = clusters.map(() => []);
@@ -955,9 +982,7 @@
 
         // Sequence of OpenType glyph names for the shaped text.
         function glyphNameSequence(str) {
-            const seg = new Intl.Segmenter(undefined, { granularity: "grapheme" });
-            let clusters = [...seg.segment(str)].map(s => s.segment);
-            clusters = mergeSpecialClusters(clusters);
+            const clusters = shapedClusters(str);
             const names = [];
             clusters.forEach(cl => {
                 shapeCluster(cl).forEach(sg => {
@@ -1195,6 +1220,10 @@
             const buf = new HBBuffer();
             buf.addText(text);
             buf.guessSegmentProperties();
+            // DO_NOT_INSERT_DOTTED_CIRCLE (0x10): when a cluster that starts with a
+            // combining mark (e.g. ya-prasaya "්‍ය" or a lone vowel sign "ා") is
+            // shaped in isolation, render its real glyph instead of ◌-prefixing it.
+            buf.setFlags(0x10);
             hbShape(hbFont, buf);
             const infos     = buf.getGlyphInfos();
             const positions = buf.getGlyphPositions();
