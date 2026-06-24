@@ -42,6 +42,8 @@
     input.addEventListener("blur", () => setTimeout(() => input.focus(), 0));
     window.addEventListener("focus", () => input.focus());
 
+    let clearOnNextInput = false;
+
     // ── Colour palette (one per shaped glyph) ─────────────────
     const PAL = ["#00ff41","#0088ff","#ff4488","#ffaa00","#aa44ff","#00ffcc","#ff6644"];
 
@@ -1094,16 +1096,24 @@
             window.print();
         }
         setTimeout(() => input.focus(), 100);
+        clearOnNextInput = true;
     }
 
     // Enter (in the text field) prints the current word directly.
     input.addEventListener("keydown", e => {
+        if (clearOnNextInput && e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+            clearAll();
+            clearOnNextInput = false;
+        }
         if (e.key === "Enter") { e.preventDefault(); printReceipt(); }
     });
-    // F12, or Ctrl+P / Cmd+P → print our receipt (no browser dialog in kiosk).
+    // F1 → print; all other Fkeys suppressed. Ctrl+P / Cmd+P → print.
     document.addEventListener("keydown", e => {
-        if (e.key === "F5") { e.preventDefault(); location.reload(); return; }
-        if (e.key === "F12") { e.preventDefault(); printReceipt(); return; }
+        if (/^F\d+$/.test(e.key)) {
+            e.preventDefault();
+            if (e.key === "F1") printReceipt();
+            return;
+        }
         if ((e.ctrlKey || e.metaKey) && (e.key === "p" || e.key === "P")) {
             e.preventDefault();
             printReceipt();
@@ -1213,6 +1223,7 @@
         updateUnicodeSeq(savedInput);
         renderAll();
         resetIdle();
+        clearOnNextInput = true;
     } else {
         startDemo();
     }
