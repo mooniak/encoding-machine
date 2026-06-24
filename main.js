@@ -472,13 +472,21 @@
             const card = document.createElement("div");
             card.className = "glyph-card";
 
+            // Upper group (name + outline data) — bottom-aligned so it grows
+            // UPWARD from the shared rendering line at ~50% height.
+            const top = document.createElement("div");
+            top.className = "glyph-top";
+            card.appendChild(top);
+
             const wrap = document.createElement("div");
             wrap.className = "glyph-canvas-wrap";
             wrap.style.borderTopColor = col;
 
             const canvas = document.createElement("canvas");
             wrap.appendChild(canvas);
-            card.appendChild(wrap);
+            // NOTE: the rendered outline (wrap) is appended LAST so it sits at the
+            // bottom of the card — nearest the connector — with the outline data
+            // box stacked directly above it.
 
             const shaped = shapeCluster(cluster);
             const _notdef = sg => sg.glyphId === 0;
@@ -502,7 +510,7 @@
             meta.innerHTML = allNotdef
                 ? `<div class="glyph-name">${_cpHex(cluster)}</div><div class="glyph-sub">not in font</div>`
                 : `<div class="glyph-name">${shapedLabel}</div><div class="glyph-sub">GID ${shaped.map(sg => sg.glyphId).join('+')}</div>`;
-            card.appendChild(meta);
+            top.appendChild(meta);
 
             // Bezier point data box
             let bCurX = 0;
@@ -525,7 +533,14 @@
             bezierEl.className = "bezier-data";
             bezierEl.style.maxWidth = gw + 'px';
             bezierEl.textContent = bCmds.join(" ") || "—";
-            card.appendChild(bezierEl);
+            top.appendChild(bezierEl);
+
+            // Shared rendering line — wrap sits between the upper group and an
+            // empty filler so every card's rendering aligns at the same height.
+            card.appendChild(wrap);
+            const fill = document.createElement("div");
+            fill.className = "glyph-fill";
+            card.appendChild(fill);
 
             glyphsRow.appendChild(card);
             glyphEls.push(card);

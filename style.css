@@ -86,6 +86,7 @@
             padding: 5px 40px 6px;
             background: #0d0d0d;
             border-top: 1px solid var(--border);
+            margin-bottom: 18px;
         }
         .area-label {
             font-size: 0.45rem; color: var(--dim);
@@ -180,11 +181,26 @@
             flex-shrink: 0;
             min-width: var(--glyph-w, 200px);
             width: fit-content;
-            max-height: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 5px;
             /* animation: fadeUp 0.25s ease; */
+        }
+        /* Upper group: name + outline data, bottom-aligned so it grows upward
+           from the shared rendering line. Heights vary per glyph. */
+        .glyph-top {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 5px;
+            overflow: hidden;
+        }
+        /* Empty filler below the rendering keeps every wrap centered at ~50%. */
+        .glyph-fill {
+            flex: 1;
+            min-height: 0;
         }
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(8px); }
@@ -241,7 +257,7 @@
             opacity: 0.55;
         }
         #demo-hud:hover { opacity: 1; }
-        #demo-status { font-size: 0.75rem; color: var(--accent); }
+        #demo-status { display: none; }
         #demo-keys   { font-size: 0.42rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; }
 
         /* ═══ 80mm THERMAL RECEIPT ═══ */
