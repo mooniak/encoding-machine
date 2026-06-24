@@ -550,23 +550,29 @@
         const PILL_H = 18;
         const CONNECTOR_LEN = 15;
 
+        // Inverted layout: glyphs sit ABOVE the connector, codepoints BELOW.
+        // So the glyph (dest) end of every line is at the top (y≈0) and the
+        // codepoint (src) end is at the bottom (y≈svgH).
+        const glyphY = 1;          // top edge — glyph side
+        const cpY    = svgH - 1;   // bottom edge — codepoint side
+
         map.forEach((srcIdxs, gi) => {
             const destEl = glyphEls[gi];
             if (!destEl) return;
             const destRect = destEl.getBoundingClientRect();
             const destX = destRect.left + destRect.width / 2 - svgRect.left;
-            const destY = svgH - 1;
+            const destY = glyphY;
             const col = PAL[gi % PAL.length];
 
             if (srcIdxs.length === 1) {
-                // single codepoint — simple S-curve
+                // single codepoint — simple S-curve (cp at bottom → glyph at top)
                 const srcEl = cpEls[srcIdxs[0]];
                 if (!srcEl) return;
                 const srcRect = srcEl.getBoundingClientRect();
                 const srcX = srcRect.left + srcRect.width / 2 - svgRect.left;
                 const path = document.createElementNS("http://www.w3.org/2000/svg","path");
                 path.setAttribute("d",
-                    `M ${srcX} 1 C ${srcX} ${svgH * 0.6}, ${destX} ${svgH * 0.4}, ${destX} ${destY}`);
+                    `M ${srcX} ${cpY} C ${srcX} ${svgH * 0.4}, ${destX} ${svgH * 0.6}, ${destX} ${destY}`);
                 path.setAttribute("stroke", col);
                 path.setAttribute("stroke-width", "1.5");
                 path.setAttribute("fill", "none");
@@ -577,13 +583,13 @@
                 // compound cluster: lines + cp-name pills + compound pill + 15px stub
                 const pillText = clusterShapedNames[gi] || '?';
                 const pillW    = Math.max(50, pillText.length * 5.4 + 16);
-                const pillBot  = destY - CONNECTOR_LEN;
-                const pillTop  = pillBot - PILL_H;
+                const pillTop  = destY + CONNECTOR_LEN;   // compound pill hangs below the glyph
+                const pillBot  = pillTop + PILL_H;
                 const pillCY   = pillTop + PILL_H / 2;
                 const pillX    = destX - pillW / 2;
 
                 const CP_PH  = 15;  // cp-name pill height
-                const CP_GAP = 10;  // gap between cp-name pill bottom and compound pill top
+                const CP_GAP = 10;  // gap between compound pill bottom and cp-name pill top
 
                 srcIdxs.forEach(ci => {
                     const srcEl = cpEls[ci];
@@ -591,22 +597,22 @@
                     const srcRect = srcEl.getBoundingClientRect();
                     const srcX = srcRect.left + srcRect.width / 2 - svgRect.left;
 
-                    // Bezier ending at pill top
+                    // Bezier from codepoint (bottom) up to compound pill bottom
+                    const span = cpY - pillBot;
                     const path = document.createElementNS("http://www.w3.org/2000/svg","path");
                     path.setAttribute("d",
-                        `M ${srcX} 1 C ${srcX} ${pillTop * 0.7}, ${destX} ${pillTop * 0.5}, ${destX} ${pillTop}`);
+                        `M ${srcX} ${cpY} C ${srcX} ${pillBot + span * 0.5}, ${destX} ${pillBot + span * 0.3}, ${destX} ${pillBot}`);
                     path.setAttribute("stroke", col);
                     path.setAttribute("stroke-width", "1.5");
                     path.setAttribute("fill", "none");
                     path.setAttribute("opacity", "0.75");
                     connSVG.appendChild(path);
 
-                    // Cp-name pill: positioned 65% of the way from src to dest, above compound pill
+                    // Cp-name pill: positioned 65% of the way from src to dest, below compound pill
                     const cpName  = cpGlyphNames[ci] || '?';
                     const cpPillW = Math.max(38, cpName.length * 5.4 + 14);
                     const cpPillCX = srcX + (destX - srcX) * 0.65;
-                    const cpPillBot = pillTop - CP_GAP;
-                    const cpPillTop = cpPillBot - CP_PH;
+                    const cpPillTop = pillBot + CP_GAP;
                     const cpPillX   = cpPillCX - cpPillW / 2;
 
                     const cpRect = document.createElementNS("http://www.w3.org/2000/svg","rect");
@@ -656,10 +662,10 @@
                 pillLabel.textContent = pillText;
                 connSVG.appendChild(pillLabel);
 
-                // 15px stub from pill bottom to glyph card
+                // 15px stub from glyph card (top) down to the compound pill
                 const stub = document.createElementNS("http://www.w3.org/2000/svg","line");
-                stub.setAttribute("x1", destX); stub.setAttribute("y1", pillBot);
-                stub.setAttribute("x2", destX); stub.setAttribute("y2", destY);
+                stub.setAttribute("x1", destX); stub.setAttribute("y1", destY);
+                stub.setAttribute("x2", destX); stub.setAttribute("y2", pillTop);
                 stub.setAttribute("stroke", col);
                 stub.setAttribute("stroke-width", "1.5");
                 stub.setAttribute("opacity", "0.75");

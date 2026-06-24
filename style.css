@@ -30,18 +30,18 @@
         }
         * { cursor: none !important; }
 
-        /* ═══ AREA 1 — input bar ═══ */
+        /* ═══ AREA 1 — input bar (anchored at the bottom) ═══ */
         #area-input {
             flex-shrink: 0;
             position: sticky;
-            top: 0;
+            bottom: 0;
             z-index: 10;
             display: flex;
             align-items: center;
             gap: 40px;
             padding: 14px 40px;
             background: var(--panel);
-            border-bottom: 1px solid var(--border);
+            border-top: 1px solid var(--border);
         }
         .input-col { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
         .input-label {
@@ -85,7 +85,7 @@
             flex-shrink: 0;
             padding: 5px 40px 6px;
             background: #0d0d0d;
-            border-bottom: 1px solid var(--border);
+            border-top: 1px solid var(--border);
         }
         .area-label {
             font-size: 0.45rem; color: var(--dim);

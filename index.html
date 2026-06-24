@@ -17,12 +17,30 @@
 <body>
 <div id="progress-bar"></div>
 
-<!-- ═══ AREA 1 ═══ -->
+<!-- Inverted layout: reads bottom-to-top — glyph data on top, unicode in the
+     middle, the text-input bar anchored at the bottom. -->
+
+<!-- ═══ AREA 3 — glyph rendering (top) ═══ -->
+<section id="area-glyph">
+    <div id="glyphs-row"></div>
+</section>
+
+<!-- ═══ CONNECTOR ═══ -->
+<div id="connector">
+    <svg id="connector-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+
+<!-- ═══ AREA 2 — unicode codepoints ═══ -->
+<section id="area-unicode">
+    <div id="codepoints-row"></div>
+</section>
+
+<!-- ═══ AREA 1 — input bar (bottom) ═══ -->
 <section id="area-input">
     <div class="input-col">
-        <span class="input-label">TYPE YOUR NAME / ඔබේ නම ටයිප් කරන්න / உங்கள் பெயரை தட்டச்சு செய்யுங்கள் 
+        <span class="input-label">TYPE YOUR NAME / ඔබේ නම ටයිප් කරන්න / உங்கள் பெயரை தட்டச்சு செய்யுங்கள்
 
-            
+
         </span>
         <input type="text" id="textInput" placeholder="Type here! / හෙලෝ / ஹலோ" maxlength="30" autofocus>
         <div id="unicode-seq"></div>
@@ -31,21 +49,6 @@
         <span class="intro-title">How machines see language <br> පරිගණකය බස දකින හැටි <br> கணினிக்கு எழுத்துக்கள் புலப்படும் விதம்
 
     </div>
-</section>
-
-<!-- ═══ AREA 2 ═══ -->
-<section id="area-unicode">
-    <div id="codepoints-row"></div>
-</section>
-
-<!-- ═══ CONNECTOR ═══ -->
-<div id="connector">
-    <svg id="connector-svg" xmlns="http://www.w3.org/2000/svg"></svg>
-</div>
-
-<!-- ═══ AREA 3 ═══ -->
-<section id="area-glyph">
-    <div id="glyphs-row"></div>
 </section>
 
 <div id="detail"></div>
