@@ -1163,7 +1163,7 @@
         } else {
             localStorage.removeItem(LS_KEY);
             clearAll();
-            resetIdle(5000);   // empty — restart demo in 5 s
+            resetIdle();   // empty — restart demo after the standard idle (120 s)
         }
     });
 

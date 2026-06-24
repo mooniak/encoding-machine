@@ -114,7 +114,7 @@
         }
         .cp-char {
             font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', 'IBM Plex Mono', sans-serif;
-            font-size: clamp(1rem, 2.5vw, 2.2rem);
+            font-size: clamp(1.21rem, 3.025vw, 2.662rem);
             line-height: 1;
             color: #fff;
             flex-shrink: 0;
@@ -127,9 +127,9 @@
             overflow: hidden;
             flex: 1;
         }
-        .cp-hex  { font-size: clamp(0.9rem, 2.vw, 0.8rem); color: var(--accent); letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .cp-name { font-size: clamp(0.32rem, 0.45vw, 0.55rem); color: var(--dim); letter-spacing: 0.5px; line-height: 1.2; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-        .cp-bin  { font-size: clamp(0.32rem, 0.42vw, 0.52rem); color: #666; letter-spacing: 0.3px; word-break: break-all; }
+        .cp-hex  { font-size: clamp(1.089rem, 2.42vw, 0.968rem); color: var(--accent); letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cp-name { font-size: clamp(0.3872rem, 0.5445vw, 0.6655rem); color: var(--dim); letter-spacing: 0.5px; line-height: 1.2; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .cp-bin  { font-size: clamp(0.3872rem, 0.5082vw, 0.6292rem); color: #666; letter-spacing: 0.3px; word-break: break-all; }
 
         /* ═══ CONNECTOR ═══ */
         #connector {
