@@ -566,17 +566,21 @@
         const CONNECTOR_LEN = 15;
 
         // Inverted layout: glyphs sit ABOVE the connector, codepoints BELOW.
-        // So the glyph (dest) end of every line is at the top (y≈0) and the
-        // codepoint (src) end is at the bottom (y≈svgH).
-        const glyphY = 1;          // top edge — glyph side
-        const cpY    = svgH - 1;   // bottom edge — codepoint side
+        // The glyph (dest) end of every line reaches UP to the bottom edge of
+        // its rendering panel (SVG overflow is visible, so a negative y paints
+        // above the connector div, closing the gap). The codepoint (src) end is
+        // at the bottom (y≈svgH).
+        const cpY = svgH - 1;      // bottom edge — codepoint side
 
         map.forEach((srcIdxs, gi) => {
             const destEl = glyphEls[gi];
             if (!destEl) return;
-            const destRect = destEl.getBoundingClientRect();
-            const destX = destRect.left + destRect.width / 2 - svgRect.left;
-            const destY = glyphY;
+            // Anchor to the rendering panel, not the full card, so the line ends
+            // flush against the bottom of the glyph outline.
+            const wrapEl  = destEl.querySelector(".glyph-canvas-wrap") || destEl;
+            const wrapRect = wrapEl.getBoundingClientRect();
+            const destX = wrapRect.left + wrapRect.width / 2 - svgRect.left;
+            const destY = wrapRect.bottom - svgRect.top;   // negative: above the connector
             const col = PAL[gi % PAL.length];
 
             if (srcIdxs.length === 1) {
@@ -585,9 +589,10 @@
                 if (!srcEl) return;
                 const srcRect = srcEl.getBoundingClientRect();
                 const srcX = srcRect.left + srcRect.width / 2 - svgRect.left;
+                const span = cpY - destY;
                 const path = document.createElementNS("http://www.w3.org/2000/svg","path");
                 path.setAttribute("d",
-                    `M ${srcX} ${cpY} C ${srcX} ${svgH * 0.4}, ${destX} ${svgH * 0.6}, ${destX} ${destY}`);
+                    `M ${srcX} ${cpY} C ${srcX} ${cpY - span * 0.4}, ${destX} ${destY + span * 0.4}, ${destX} ${destY}`);
                 path.setAttribute("stroke", col);
                 path.setAttribute("stroke-width", "1.5");
                 path.setAttribute("fill", "none");
