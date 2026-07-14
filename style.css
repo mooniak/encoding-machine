@@ -222,6 +222,7 @@
             overflow: hidden;
         }
         .glyph-canvas-wrap canvas { display: block; height: 100%; width: auto; }
+        .glyph-meta { flex-shrink: 0; margin-top: 6px; }
         .glyph-name { font-size: 0.75rem; color: var(--accent); font-weight: bold; letter-spacing: 1px; word-break: break-all; }
         .glyph-sub  { font-size: 0.65rem; color: var(--dim); line-height: 1.4; }
         .bezier-data {

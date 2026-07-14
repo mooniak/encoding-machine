@@ -545,12 +545,14 @@
                 ? _cpHex(cluster)
                 : shaped.map(sg => _notdef(sg) ? _cpHex(String.fromCodePoint(sg.glyphId)) : _glyphName(sg)).join('+');
             clusterShapedNames.push(shapedLabel);
+            // Glyph name + GID — appended BELOW the canvas (see after `wrap`) as a
+            // caption. The connector anchors to this element's bottom.
             const meta = document.createElement("div");
+            meta.className = "glyph-meta";
             meta.style.maxWidth = gw + 'px';
             meta.innerHTML = allNotdef
                 ? `<div class="glyph-name">${_cpHex(cluster)}</div><div class="glyph-sub">not in font</div>`
                 : `<div class="glyph-name">${shapedLabel}</div><div class="glyph-sub">GID ${shaped.map(sg => sg.glyphId).join('+')}</div>`;
-            top.appendChild(meta);
 
             // Bezier point data box
             let bCurX = 0;
@@ -577,7 +579,9 @@
 
             // Shared rendering line — wrap sits between the upper group and an
             // empty filler so every card's rendering aligns at the same height.
+            // The glyph-name caption sits directly below the canvas.
             card.appendChild(wrap);
+            card.appendChild(meta);
             const fill = document.createElement("div");
             fill.className = "glyph-fill";
             card.appendChild(fill);
@@ -627,8 +631,13 @@
             // flush against the bottom of the glyph outline.
             const wrapEl  = destEl.querySelector(".glyph-canvas-wrap") || destEl;
             const wrapRect = wrapEl.getBoundingClientRect();
+            // Lines start below the glyph-name caption (which now sits under the
+            // canvas), so they never cross the label text. destX stays centred on
+            // the canvas.
+            const anchorEl  = destEl.querySelector(".glyph-meta") || wrapEl;
+            const anchorRect = anchorEl.getBoundingClientRect();
             const destX = wrapRect.left + wrapRect.width / 2 - svgRect.left;
-            const destY = wrapRect.bottom - svgRect.top;   // negative: above the connector
+            const destY = anchorRect.bottom - svgRect.top;   // below the caption
             const col = PAL[gi % PAL.length];
 
             if (srcIdxs.length === 1) {
