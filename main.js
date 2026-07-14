@@ -447,6 +447,13 @@
 
         // ── Area 2: one card per codepoint ──
         const cpEls = [];
+        // Scale the character down and keep the U+ codepoint prominent as the
+        // string grows: the more codepoints, the smaller the glyph so the
+        // unicode value stays fully visible instead of getting truncated.
+        const n = Math.max(1, chars.length);
+        cpRow.style.setProperty("--cp-char-size", Math.max(0.7, Math.min(1.8, 9 / n)) + "rem");
+        cpRow.style.setProperty("--cp-hex-size",  Math.max(0.7, Math.min(1.25, 11 / n)) + "rem");
+
         const cpGlyphNames = [];
         chars.forEach((c, ci) => {
             const cp  = c.codePointAt(0);

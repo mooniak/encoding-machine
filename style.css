@@ -115,10 +115,14 @@
         }
         .cp-char {
             font-family: 'Noto Sans Sinhala', 'Noto Sans Tamil', 'IBM Plex Mono', sans-serif;
-            font-size: clamp(1.21rem, 3.025vw, 2.662rem);
+            /* --cp-char-size is set per-render in main.js so the character
+               shrinks as the string grows longer, freeing room for the U+ code. */
+            font-size: var(--cp-char-size, clamp(0.9rem, 2vw, 1.8rem));
             line-height: 1;
             color: #fff;
-            flex-shrink: 0;
+            flex: 0 1 auto;
+            min-width: 0;
+            overflow: hidden;
         }
         .cp-info {
             display: flex;
@@ -128,7 +132,7 @@
             overflow: hidden;
             flex: 1;
         }
-        .cp-hex  { font-size: clamp(1.089rem, 2.42vw, 0.968rem); color: var(--accent); letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .cp-hex  { font-size: var(--cp-hex-size, clamp(0.9rem, 1.6vw, 1.25rem)); font-weight: bold; color: var(--accent); letter-spacing: 0.5px; white-space: nowrap; }
         .cp-name { font-size: clamp(0.3872rem, 0.5445vw, 0.6655rem); color: var(--dim); letter-spacing: 0.5px; line-height: 1.2; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
         .cp-bin  { font-size: clamp(0.3872rem, 0.5082vw, 0.6292rem); color: #666; letter-spacing: 0.3px; word-break: break-all; }
 
@@ -187,9 +191,11 @@
             /* animation: fadeUp 0.25s ease; */
         }
         /* Upper group: name + outline data, bottom-aligned so it grows upward
-           from the shared rendering line. Heights vary per glyph. */
+           from the shared rendering line. Heights vary per glyph.
+           flex 3:1 against .glyph-fill puts the rendering line at ~75% from the
+           top, leaving room above for the full bezier data. */
         .glyph-top {
-            flex: 1;
+            flex: 3;
             min-height: 0;
             display: flex;
             flex-direction: column;
@@ -197,7 +203,7 @@
             gap: 5px;
             overflow: hidden;
         }
-        /* Empty filler below the rendering keeps every wrap centered at ~50%. */
+        /* Empty filler below the rendering keeps every wrap's render line at ~75%. */
         .glyph-fill {
             flex: 1;
             min-height: 0;
@@ -228,7 +234,6 @@
             word-break: break-all;
             flex-shrink: 1;
             min-height: 0;
-            max-height: 10rem;
             overflow: hidden;
             letter-spacing: 0;
         }
