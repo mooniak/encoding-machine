@@ -481,10 +481,27 @@
         // ── Area 3: one card per grapheme cluster (post-GSUB shaped) ──
         const availW = glyphsRow.clientWidth  || (window.innerWidth  - 80);
         const availH = glyphsRow.clientHeight || (window.innerHeight - 350);
-        const gwW = Math.floor((availW - 12 * clusters.length) / clusters.length);
+        const GAP = 12;   // matches #glyphs-row gap
+
+        // Size the glyph box (gw) so EVERY card fits within availW without
+        // clipping. A card is as wide as its canvas, and drawClusterAnatomy sizes
+        // a canvas to max(gw, glyphPx + 0.24·gw) where glyphPx scales linearly
+        // with gw. So each card width = gw · factor, with
+        //   factor = max(1, advance·0.79/unitsPerEm + 0.24)
+        // Solving Σ(gw·factor) + gaps ≤ availW gives the width-bound gw below.
+        // This keeps the proportional (wide-vs-narrow) glyph widths intact while
+        // guaranteeing the whole row fits the 1280-wide kiosk display.
+        const upm = font.unitsPerEm;
+        const factors = clusters.map(cl => {
+            const adv = shapeCluster(cl).reduce((s, sg) => s + sg.xAdvance, 0);
+            return Math.max(1, (adv * 0.79 / upm) + 0.24);
+        });
+        const sumF = factors.reduce((s, f) => s + f, 0) || 1;
+        const gaps = GAP * Math.max(0, clusters.length - 1);
+        const gwW = Math.floor((availW - gaps) / sumF);
         // Leave ~120px below canvas for glyph-name + glyph-sub + bezier-data + gaps
         const gwH = Math.max(60, availH - 120);
-        const gw  = Math.max(80, Math.min(gwW, gwH, 220));
+        const gw  = Math.max(52, Math.min(gwW, gwH, 220));
         document.documentElement.style.setProperty("--glyph-w", gw + "px");
 
         const glyphEls = [];
@@ -571,6 +588,10 @@
             const hasPath = shaped.some(sg => font.glyphs.get(sg.glyphId)?.path?.commands?.length > 0);
             if (hasPath) {
                 drawClusterAnatomy(cluster, canvas, gw);
+            } else {
+                // Blank glyph (space etc.) has no outline — render a small square
+                // placeholder with just the baseline so it doesn't stretch wide.
+                drawBlankGlyph(canvas, gw);
             }
         });
 
@@ -584,6 +605,10 @@
         const svgRect = connSVG.getBoundingClientRect();
         if (!svgRect.width) return;
         const svgH = svgRect.height;
+        const svgW = svgRect.width;
+        // Keep a pill of width w fully inside the connector so edge-cluster
+        // labels aren't clipped by the 1280-wide viewport.
+        const clampPillX = (x, w) => Math.max(4, Math.min(x, svgW - w - 4));
 
         const PILL_H = 18;
         const CONNECTOR_LEN = 15;
@@ -629,7 +654,8 @@
                 const pillTop  = destY + CONNECTOR_LEN;   // compound pill hangs below the glyph
                 const pillBot  = pillTop + PILL_H;
                 const pillCY   = pillTop + PILL_H / 2;
-                const pillX    = destX - pillW / 2;
+                const pillX    = clampPillX(destX - pillW / 2, pillW);
+                const pillTextX = pillX + pillW / 2;      // label centred over the (clamped) pill
 
                 const CP_PH  = 15;  // cp-name pill height
                 const CP_GAP = 10;  // gap between compound pill bottom and cp-name pill top
@@ -654,9 +680,9 @@
                     // Cp-name pill: positioned 65% of the way from src to dest, below compound pill
                     const cpName  = cpGlyphNames[ci] || '?';
                     const cpPillW = Math.max(38, cpName.length * 5.4 + 14);
-                    const cpPillCX = srcX + (destX - srcX) * 0.65;
                     const cpPillTop = pillBot + CP_GAP;
-                    const cpPillX   = cpPillCX - cpPillW / 2;
+                    const cpPillX   = clampPillX(srcX + (destX - srcX) * 0.65 - cpPillW / 2, cpPillW);
+                    const cpPillCX  = cpPillX + cpPillW / 2;
 
                     const cpRect = document.createElementNS("http://www.w3.org/2000/svg","rect");
                     cpRect.setAttribute("x", cpPillX);
@@ -696,7 +722,7 @@
 
                 // Compound glyph name
                 const pillLabel = document.createElementNS("http://www.w3.org/2000/svg","text");
-                pillLabel.setAttribute("x", destX);
+                pillLabel.setAttribute("x", pillTextX);
                 pillLabel.setAttribute("y", pillCY + 3);
                 pillLabel.setAttribute("text-anchor", "middle");
                 pillLabel.setAttribute("fill", col);
@@ -718,6 +744,22 @@
     }
 
     // ── Cluster bezier canvas (post-GSUB shaped glyphs, font-unit coordinates) ──
+    function drawBlankGlyph(canvas, size) {
+        // Small square canvas with a dashed baseline — used for space and other
+        // outline-less glyphs so they render compactly instead of stretching wide.
+        const h = canvas.height = size;
+        const w = canvas.width  = size;
+        const ctx = canvas.getContext("2d");
+        const oy = h / 2 + size * 0.79 * (font.ascender + font.descender) / 2 / font.unitsPerEm;
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, w, h);
+        ctx.strokeStyle = "#ebebeb";
+        ctx.lineWidth = 1;
+        ctx.setLineDash([2, 4]);
+        ctx.beginPath(); ctx.moveTo(0, oy); ctx.lineTo(w, oy); ctx.stroke();
+        ctx.setLineDash([]);
+    }
+
     function drawClusterAnatomy(text, canvas, size) {
         const ctx = canvas.getContext("2d");
         const h = canvas.height = size;
