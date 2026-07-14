@@ -1206,7 +1206,12 @@
         if (e.key === "ArrowLeft")  { e.preventDefault(); demoJump(-1); return; }
         if (e.key === "ArrowDown")  { e.preventDefault(); demoPause(); return; }
         if (e.key === "ArrowUp")    { e.preventDefault(); demoResume(); return; }
-        if (demoToken) { stopDemo(); }   // any other key: stop demo, keep text
+        if (demoToken) {                 // any other key: stop demo
+            stopDemo();
+            // Starting to type a character clears the demo word so the
+            // user's input starts fresh instead of appending to it.
+            if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) clearAll();
+        }
     });
     const LS_KEY = "akurugraphy-input";
     input.addEventListener("input", () => {
