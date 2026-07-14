@@ -67,17 +67,77 @@
             border-top: 1px solid var(--border);
             padding-top: 5px;
         }
-        .intro-col { flex: 1; text-align: right; }
+        .intro-col { flex: 1; text-align: right; position: relative; }
+        /* Tagline and the F1 print-hint banner share this corner and cross-fade
+           in rotation (see @keyframes below). */
         .intro-title {
             display: block;
-            font-size: 0.6rem; font-weight: bold;
+            animation: introTitleCycle 8s ease-in-out infinite;
+        }
+        .intro-en {
+            display: block;
+            font-size: 1.25rem; font-weight: bold;
             color: var(--accent);
-            margin-bottom: 6px;
+            line-height: 1.2; letter-spacing: 0.5px;
+        }
+        .intro-tr {
+            display: block;
+            font-size: 0.72rem; font-weight: bold;
+            color: var(--accent); opacity: 0.85;
+            line-height: 1.55;
         }
         .intro-line {
             display: block;
             font-size: 0.63rem; color: var(--dim);
             letter-spacing: 1px; line-height: 1.9;
+        }
+
+        /* F1 print-hint banner — absolutely overlaid on the tagline corner so it
+           appears "in the same place", pulsing in and out opposite the tagline. */
+        .print-hint {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            opacity: 0;
+            pointer-events: none;
+            animation: printHintCycle 8s ease-in-out infinite;
+        }
+        .print-hint span {
+            background: #fff;
+            color: #8e0000;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            padding: 8px 16px;
+            border-radius: 5px;
+            box-shadow: 0 2px 14px rgba(0,0,0,0.45);
+        }
+        .print-hint kbd {
+            display: inline-block;
+            background: #8e0000;
+            color: #fff;
+            font-family: inherit;
+            font-weight: 700;
+            padding: 1px 8px;
+            margin: 0 3px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.3);
+        }
+        /* Tagline visible most of the cycle; hidden while the banner shows. */
+        @keyframes introTitleCycle {
+            0%, 6%    { opacity: 1; }
+            12%, 36%  { opacity: 0; }
+            42%, 100% { opacity: 1; }
+        }
+        /* Banner: hidden, then fades in ~12–36% of the cycle (~2s in 8s), then out. */
+        @keyframes printHintCycle {
+            0%, 6%    { opacity: 0; }
+            12%, 36%  { opacity: 1; }
+            42%, 100% { opacity: 0; }
         }
 
         /* ═══ AREA 2 — unicode codepoints ═══ */
